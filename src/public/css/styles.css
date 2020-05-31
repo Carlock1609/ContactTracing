@@ -2,10 +2,26 @@ body {
     height: 100vh;
     
     /* Center and scale the image nicely */
-    background-image: url('../images/cover_photo2.png');
+    /* background-image: url('../images/cover_photo2.png');
     background-repeat: no-repeat;
-    background-position: center; 
-    top: 50%;
+    background-position: left; 
+    top: 50%; */
    /* background: white; */
 }
-
+/* 
+#login_modal {
+    height: 100vh;
+    background: rgb(39,39,39, 0.5);
+    z-index: 100;
+} */
+#cover_photo {
+    height: 80%;
+    /* background-image: url('../images/cover_photo2.png'); */
+    /* background-repeat: no-repeat;
+    background-position: left; */
+    top: 50%; 
+}
+#calender {
+    height: 100%;
+    background-color: grey;
+}

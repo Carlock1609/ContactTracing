@@ -1,13 +1,11 @@
-body,html {
+body {
     height: 100vh;
     
     /* Center and scale the image nicely */
-    background: url('../images/cover_photo.pdf');
-    background-position: center;
+    background-image: url('../images/cover_photo2.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center; 
+    top: 50%;
+   /* background: white; */
 }
 
-h1 {
-    color: green;
-}

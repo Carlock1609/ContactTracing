@@ -1,0 +1,22 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "Contact tracing journal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlock1609/Contact_tracing.git"
+  },
+  "author": "Jon Yates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlock1609/Contact_tracing/issues"
+  },
+  "homepage": "https://github.com/Carlock1609/Contact_tracing#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

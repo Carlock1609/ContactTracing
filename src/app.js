@@ -18,20 +18,20 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs'); // setting the view engine, were using ejs
 
 // seeding DB
-const User = require('./models/users');
-let testUser = {
-    email: 'carlock1609@SpeechGrammarList.com',
-    username: 'Carlock',
-    password: 'Yatesboy906',
-};
+// const User = require('./models/users');
+// let testUser = {
+//     email: 'carlock1609@SpeechGrammarList.com',
+//     username: 'Carlock',
+//     password: 'Yatesboy906',
+// };
 
-User.create(testUser, function(err, createdUser) {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log('Successfully created!' + createdUser);
-    }
-});
+// User.create(testUser, function(err, createdUser) {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log('Successfully created!' + createdUser);
+//     }
+// });
 
 
 

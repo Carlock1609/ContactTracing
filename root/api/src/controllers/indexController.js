@@ -1,3 +1,4 @@
+// Require controllers
 const CalendarEntry = require('../models/calendar');
 const JournalEntry = require('../models/journal_entry')
 
@@ -10,6 +11,7 @@ const JournalEntry = require('../models/journal_entry')
 //     return res.send(users[req.params.userId]);
 //   });
 
+// Sends User page Dynamic data to list - GET
 exports.index = function(req, res) {
     // Loading all Calendar entries to display
     // Later we need to have a filter for only the logged in users Data
@@ -35,7 +37,7 @@ exports.index = function(req, res) {
         })
     }
 
-
+// Creates calendar entry - POST
 exports.create_calendar_entry = function(req,res) {
     let user = req.user; 
     let date = req.body.date;
@@ -57,6 +59,7 @@ exports.create_calendar_entry = function(req,res) {
     res.redirect('/');
 }
 
+// Creates Journal entry - POST
 exports.create_journal_entry = function(req, res) {
     let user = req.user
     let date = req.body.date;
@@ -80,3 +83,11 @@ exports.create_journal_entry = function(req, res) {
 
     res.redirect('/');
 }
+
+// Logout current user - POST
+exports.logout = function(req, res) {
+    req.logout();
+    // req.flash('success', 'Logged out!');
+    res.redirect('/');
+};
+

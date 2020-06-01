@@ -17,24 +17,24 @@ exports.index = function(req, res) {
     // Later we need to have a filter for only the logged in users Data
 
     // THIS WORKED YASSS -  This sends the user a json object
-    // users = {
-    //     1: {
-    //       id: '1',
-    //       username: 'Robin Wieruch',
-    //     },
-    //     2: {
-    //       id: '2',
-    //       username: 'Dave Davids',
-    //     },
-    //   };
-    //   res.send(Object.values(users));
-    CalendarEntry.find()
-        .then((entries) => {
-            res.send(Object.values(entries));
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+    users = {
+        1: {
+          id: '1',
+          username: 'Robin Wieruch',
+        },
+        2: {
+          id: '2',
+          username: 'Dave Davids',
+        },
+      };
+      res.send(Object.values(users));
+    // CalendarEntry.find()
+    //     .then((entries) => {
+    //         res.send(Object.values(entries));
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     })
     }
 
 // Creates calendar entry - POST

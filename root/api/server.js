@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const compression = require('compression')
 // Authentication imports - passport
 const localStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
@@ -17,6 +18,7 @@ mongoose.connect('mongodb://localhost/Contact_Tracing', {
 });
 
 // app settings
+app.use(compression())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 

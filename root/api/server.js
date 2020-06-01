@@ -61,5 +61,5 @@ app.use('/', indexRoutes);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-    console.log('SERVER IS UP!');
+    console.log('SERVER IS UP! @ ' + PORT);
 });

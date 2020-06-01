@@ -10,6 +10,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs'); // setting the view engine, were using ejs
 
+// requiring routes from router
+let Routes = require('./router');
+// mounting routes to app
+app.use('/', Routes);
 
-
-module.exports = app;
+const PORT = process.env.PORT || 8001;
+app.listen(PORT, () => {
+    console.log('SERVER IS UP! @ ' + PORT);
+});

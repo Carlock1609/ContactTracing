@@ -5,6 +5,9 @@ DS_STORE
 secret_keys.js
 config.js
 .config.js
+config
+config.json
+.config.json
 # Logs
 logs
 *.log

@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+
+
+    <form action="">
+        <input id="search_input" type="search" name="search">
+        <button id="search_button" class="btn btn-outline-dark">Search</button>
+    </form>
+    <h4></h4>
+    <div id="calendar" class="container-fluid">
+        <div class="row">
+            <% for(let i = 0; i < 30; i++) { %>
+                <div class="col-lg-1.7 col-md-1.7 col-sm-1.7">
+                    <div>
+                        <h4><%= `${i}` %></h4>
+                        <br>
+                        <h4>Stayed Home ()</h4>
+                        <h4>Delivery    (x)</h4>
+                        <h4>Symptoms    ()</h4>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+   
+    
+
+
+<%- include('partials/footer') %>

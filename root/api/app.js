@@ -1,21 +1,38 @@
+// App + DB imports
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+// Authentication imports - passport
+const localStrategy = require('passport-local');
+const passportLocalMongoose = require('passport-local-mongoose');
+const passport = require('passport');
 
+// import models
+const User = require('./src/models/users')
+
+// connection to DB
 mongoose.connect('mongodb://localhost/Contact_Tracing', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
-// pointing to location of routes
-const indexRoutes = require('./routes/index');
-
 // app settings
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(__dirname + '/public')); 
 
-app.set('view engine', 'ejs'); // setting the view engine, were using ejs
+// Authentication settings
+app.use(require('express-session')({
+    secret: 'This is a Secret session',
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+// Passport Local Auth - this can be changed for OAuth's
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 // seeding DB
 // const User = require('./models/users');
@@ -32,11 +49,6 @@ app.set('view engine', 'ejs'); // setting the view engine, were using ejs
 //         console.log('Successfully created!' + createdUser);
 //     }
 // });
-
-
-
-
-app.use('/', indexRoutes);
 
 
 module.exports = app;

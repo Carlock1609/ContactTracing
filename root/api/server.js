@@ -50,5 +50,14 @@ passport.deserializeUser(User.deserializeUser());
 //     }
 // });
 
+// Setting up routes variables
+const indexRoutes = require('./src/routes/index');
 
-module.exports = app;
+// Pointing to routes
+app.use('/', indexRoutes);
+
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+    console.log('SERVER IS UP!');
+});

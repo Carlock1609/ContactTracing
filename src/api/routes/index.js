@@ -6,5 +6,8 @@ const router = express.Router();
 router.get('/', function(req, res) {
     res.render('index');
 })
+router.post('/', function(req,res) {
+    res.send('POSTED')
+})
 
 module.exports = router;

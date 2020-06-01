@@ -53,7 +53,7 @@ passport.deserializeUser(User.deserializeUser());
 // Setting up routes variables
 const indexRoutes = require('./src/routes/index');
 
-// Pointing to routes
+// Mounting routes on app
 app.use('/', indexRoutes);
 
 

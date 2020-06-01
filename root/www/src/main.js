@@ -1,4 +1,4 @@
-const requirejs = require('require.js');
+const requirejs = require('requirejs');
 
 requirejs.config({
     //Pass the top-level main.js/index.js require

@@ -16,7 +16,6 @@
                 <div id="day_block" class="col-lg-1.7 col-md-1.7 col-sm-1.7 text-left">
                     <div>
                         <h4><%= `${i}` %></h4>
-                        
                         <p>Stayed Home ()</p>
                         <p>Delivery    (x)</p>
                         <p>Symptoms    ()</p>
@@ -30,10 +29,11 @@
    
     <div id="journal" class="container-fluid">
         <h4>Journals here</h4>
-        <form id="search_form" action="">
+        <form id="search_form" action="http://127.0.0.1:8000/journal_entry/" method="POST">
             <input id="date" type="date" name="date">
             <input id="time" type="time" name="time">
             <input id="activity" type="text" name="activity">
+            <input id="location" type="text" name="location">
             <select id="choice1" name="choice1">
                 <option value="wore_mask">Wore Mask</option>
                 <option value="did_not">Did not wear Mask</option>
@@ -44,7 +44,7 @@
             </select>
             <input id="contact" type="text" name="contact">
             <input id="notes" type="text" name="notes">
-            <button id="journal_btn" class="btn btn-outline-dark">Submit</button>
+            <button id="journal_btn" class="btn btn-outline-dark" type="submit">Submit</button>
         </form>
     </div>
     

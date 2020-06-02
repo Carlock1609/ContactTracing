@@ -22,6 +22,12 @@ app.use(compression())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// Middleware to take care of CORS error
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
 // Authentication settings
 app.use(require('express-session')({
     secret: 'This is a Secret session',

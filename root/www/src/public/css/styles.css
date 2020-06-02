@@ -21,15 +21,3 @@ body {
     background-position: left; */
     top: 50%; 
 }
-#calendar {
-    height: 100%;
-    display: flex;
-}
-
-/* SEARCH FUNCTION */
-#search_input {
-    width: 80%;
-}
-#search_button {
-    display: inline;
-}

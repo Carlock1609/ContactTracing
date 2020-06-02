@@ -1,28 +1,52 @@
 <%- include('partials/header') %>
 
+    <br>
+    <div class="container-fluid text-center">
+        <form action="">
+            <input id="search_input" type="search" name="search">
+            <button id="search_button" class="btn btn-outline-dark">Search</button>
+        </form>
+    </div>
+    
+    <hr>
 
-
-    <form action="">
-        <input id="search_input" type="search" name="search">
-        <button id="search_button" class="btn btn-outline-dark">Search</button>
-    </form>
-    <h4></h4>
-    <div id="calendar" class="container-fluid">
+    <div id="calendar" class="container-fluid text-center">
         <div class="row">
             <% for(let i = 0; i < 30; i++) { %>
-                <div class="col-lg-1.7 col-md-1.7 col-sm-1.7">
+                <div id="day_block" class="col-lg-1.7 col-md-1.7 col-sm-1.7 text-left">
                     <div>
                         <h4><%= `${i}` %></h4>
-                        <br>
-                        <h4>Stayed Home ()</h4>
-                        <h4>Delivery    (x)</h4>
-                        <h4>Symptoms    ()</h4>
+                        
+                        <p>Stayed Home ()</p>
+                        <p>Delivery    (x)</p>
+                        <p>Symptoms    ()</p>
                     </div>
                 </div>
             <% } %>
         </div>
     </div>
+
+    <br>
    
+    <div id="journal" class="container-fluid">
+        <h4>Journals here</h4>
+        <form id="search_form" action="">
+            <input id="date" type="date" name="date">
+            <input id="time" type="time" name="time">
+            <input id="activity" type="text" name="activity">
+            <select id="choice1" name="choice1">
+                <option value="wore_mask">Wore Mask</option>
+                <option value="did_not">Did not wear Mask</option>
+            </select>
+            <select id="choice2" name="choice2">
+                <option value="wore_mask">Wore Mask</option>
+                <option value="did_not">Did not wear Mask</option>
+            </select>
+            <input id="contact" type="text" name="contact">
+            <input id="notes" type="text" name="notes">
+            <button id="journal_btn" class="btn btn-outline-dark">Submit</button>
+        </form>
+    </div>
     
 
 

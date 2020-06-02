@@ -8,3 +8,6 @@
 .nav-link:hover {
     color:grey
 }
+.navbar-toggler-icon {
+    background:rgb(57, 57, 57);
+}

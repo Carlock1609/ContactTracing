@@ -4,16 +4,16 @@ const Users = require('../models/users');
 const passport = require('passport');
 
 //  Renders Registration page - GET - This will change because I don't want to use render
-exports.register = function(req, res) {
-    res.render('register', {currentUser:req.user});
-}
+// exports.register = function(req, res) {
+//     res.render('register', {currentUser:req.user});
+// }
 
 // Register User - POST
 exports.register_created = function(req, res) {
     User.register(new User({email: req.body.email, username: req.body.username}), req.body.password, function(err, user) {
         if(err) {
             console.log(err);
-            return res.render('register');
+            return res.redirect('/');
         }
         passport.authenticate('local')(req,res, function(){
             console.log(user)
@@ -26,6 +26,7 @@ exports.register_created = function(req, res) {
 exports.login = function(req, res) {
     
     // fill this out soon. right now middleware is being used.
+    res.send({currentUser:req.user})
 }
 
 // Logout user - POST

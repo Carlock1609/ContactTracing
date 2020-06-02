@@ -32,6 +32,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Journal Entries </a>
               </li>
+              <% if(currentUser) { %>
+              <li class="nav-item">
+                <a class="nav-link" href="https://127.0.0.1:8000/logout/">Logout </a>
+              </li>
+              <% } else { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Login </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register </a>
+                </li>
+              <% } %> 
             </ul>
           </div>
         </nav>

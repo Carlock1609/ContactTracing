@@ -10,14 +10,15 @@ const passport = require('passport');
 
 // Register User - POST
 exports.register_created = function(req, res) {
-    User.register(new User({email: req.body.email, username: req.body.username}), req.body.password, function(err, user) {
+    Users.register(new Users({email: req.body.email, username: req.body.username}), req.body.password, function(err, user) {
         if(err) {
             console.log(err);
-            return res.redirect('/');
+            // return res.redirect('/');
         }
         passport.authenticate('local')(req,res, function(){
             console.log(user)
-            res.redirect('/')
+            res.send(Object.values(user))
+            // res.redirect('https://127.0.0.1:8001/')
         });
     });
 }
@@ -33,7 +34,7 @@ exports.login = function(req, res) {
 exports.logout = function(req, res) {
         req.logout();
         // req.flash('success', 'Logged out!');
-        res.redirect('/');
+        // res.redirect('https://127.0.0.1:8001/');
     };
 
 

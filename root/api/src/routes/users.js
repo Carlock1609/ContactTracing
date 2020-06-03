@@ -8,7 +8,7 @@ const usersController = require('../controllers/usersController');
 
 
 //  Register page
-router.get('/register', usersController.register)
+// router.get('/register', usersController.register)
 
 // Register post
 router.post('/register', usersController.register_created)

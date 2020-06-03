@@ -8,6 +8,8 @@ config.js
 config
 config.json
 .config.json
+cert.pem
+key.pem
 # Logs
 logs
 *.log

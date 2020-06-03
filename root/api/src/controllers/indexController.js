@@ -56,7 +56,7 @@ exports.create_calendar_entry = function(req,res) {
         }
     });
     
-    res.redirect('/');
+    // res.redirect('https://127.0.0.1:8001/');
 }
 
 // Creates Journal entry - POST
@@ -81,13 +81,13 @@ exports.create_journal_entry = function(req, res) {
         }
     })
 
-    res.redirect('/');
+    // res.redirect('https://127.0.0.1:8001/');
 }
 
 // Logout current user - POST
 exports.logout = function(req, res) {
     req.logout();
     // req.flash('success', 'Logged out!');
-    res.redirect('/');
+    // res.redirect('https://127.0.0.1:8001/');
 };
 

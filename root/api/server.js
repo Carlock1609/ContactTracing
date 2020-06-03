@@ -3,9 +3,6 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const compression = require('compression')
-// SSL_PROTOCOL
-const https = require('https');
-const fs = require('fs');
 // Authentication imports - passport
 const localStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
@@ -14,15 +11,13 @@ const passport = require('passport');
 // import models
 const User = require('./src/models/users')
 
+
+// const sslOptions = {
+//     key: fs.readFileSync('key.pem'),
+//     cert: fs.readFileSync('cert.pem'),  
+//   };
+
 // SSL certs - I'm hoping this will get rid of the SSL protocal_error I'm having
-const SSL_KEY = process.env.SSL_PASSPHRASE
-console.log(SSL_KEY)
-const sslOptions = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem'),
-    passphrase: 'process.env.SSL_PASSPHRASE'
-    
-  };
 
 
 // connection to DB
@@ -75,14 +70,18 @@ passport.deserializeUser(User.deserializeUser());
 
 // Setting up routes variables
 const indexRoutes = require('./src/routes/index');
+const usersRoutes = require('./src/routes/users');
 
 // Mounting routes on app
 app.use('/', indexRoutes);
+app.use('/users', usersRoutes);
 
 
 
-https.createServer(sslOptions, app).listen(8000)
-// const PORT = process.env.PORT || 8000;
-// app.listen(PORT, () => {
-//     console.log('SERVER IS UP! @ ' + PORT);
-// });
+
+// https.createServer(sslOptions, app).listen(8000)
+// console.log('SERVERUP!')
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+    console.log('SERVER IS UP! @ ' + PORT);
+});

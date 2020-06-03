@@ -1,6 +1,7 @@
 // Require controllers
 const CalendarEntry = require('../models/calendar');
-const JournalEntry = require('../models/journal_entry')
+const JournalEntry = require('../models/journal_entry');
+const Users = require('../models/users');
 
 // RESTful API - sending the object instead of the ejs
 // app.get('/users', (req, res) => {
@@ -17,17 +18,15 @@ exports.index = function(req, res) {
     // Later we need to have a filter for only the logged in users Data
 
     // THIS WORKED YASSS -  This sends the user a json object
-    users = {
-        1: {
-          id: '1',
-          username: 'Robin Wieruch',
-        },
-        2: {
-          id: '2',
-          username: 'Dave Davids',
-        },
-      };
-      res.send(Object.values(users));
+    Users.find()
+        .then((users) => {
+            console.log(users)
+            res.send(Object.values(users));
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        
     // CalendarEntry.find()
     //     .then((entries) => {
     //         res.send(Object.values(entries));

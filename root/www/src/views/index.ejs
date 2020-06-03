@@ -31,11 +31,11 @@
         <h4>Journals here</h4>
         <form id="search_form" action="http://127.0.0.1:8000/journal_entry/" method="POST">
             <div class="row">
-                <div class="col-4">
+                <div class="col-6">
                     <label for="date">Date: </label>
                     <input id="date" type="date" name="date">
                 </div>
-                <div class="col-8">
+                <div class="col-6">
                     <label for="time">Time: </label>
                     <input id="time" type="time" name="time">
                 </div>
@@ -68,18 +68,18 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-2">
                 <div class="col">
                     <!-- <label for="contact">Contact: </label> -->
                     <p class="mb-0">Contact: </p>
-                    <textarea id="contact" type="text" name="contact" rows="4" cols="100" placeholder="Any contact with COVID here..."></textarea>
+                    <textarea id="contact" type="text" name="contact" placeholder="Any contact with COVID here..."></textarea>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col">
                     <!-- <label for="notes">Notes: </label> -->
                     <p class="mb-0">Notes: </p>
-                    <textarea id="notes" type="text" name="notes" rows="4" cols="100" placeholder="Any notes here..."></textarea>
+                    <textarea id="notes" type="text" name="notes"  placeholder="Any notes here..."></textarea>
                 </div>
             </div>
             <button id="journal_btn" class="btn btn-outline-dark" type="submit">Submit</button>

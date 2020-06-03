@@ -30,20 +30,58 @@
     <div id="journal" class="container-fluid">
         <h4>Journals here</h4>
         <form id="search_form" action="http://127.0.0.1:8000/journal_entry/" method="POST">
-            <input id="date" type="date" name="date">
-            <input id="time" type="time" name="time">
-            <input id="activity" type="text" name="activity">
-            <input id="location" type="text" name="location">
-            <select id="choice1" name="choice1">
-                <option value="wore_mask">Wore Mask</option>
-                <option value="did_not">Did not wear Mask</option>
-            </select>
-            <select id="choice2" name="choice2">
-                <option value="wore_mask">Wore Mask</option>
-                <option value="did_not">Did not wear Mask</option>
-            </select>
-            <input id="contact" type="text" name="contact">
-            <input id="notes" type="text" name="notes">
+            <div class="row">
+                <div class="col-4">
+                    <label for="date">Date: </label>
+                    <input id="date" type="date" name="date">
+                </div>
+                <div class="col-8">
+                    <label for="time">Time: </label>
+                    <input id="time" type="time" name="time">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="activity">Activity: </label>
+                    <input id="activity" type="text" name="activity">
+                </div>
+                <div class="col-6">
+                    <label for="location">Location: </label>
+                    <input id="location" type="text" name="location">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="choice1">Did you wear a mask: </label>
+                    <select id="choice1" name="choice1">
+                        <option value="wore_mask">Wore Mask</option>
+                        <option value="did_not">Did not wear Mask</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="choice2">Did others wear a mask: </label>
+                    <select id="choice2" name="choice2">
+                        <option value="wore_mask">Wore Mask</option>
+                        <option value="did_not">Did not wear Mask</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!-- <label for="contact">Contact: </label> -->
+                    <p class="mb-0">Contact: </p>
+                    <textarea id="contact" type="text" name="contact" rows="4" cols="100" placeholder="Any contact with COVID here..."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!-- <label for="notes">Notes: </label> -->
+                    <p class="mb-0">Notes: </p>
+                    <textarea id="notes" type="text" name="notes" rows="4" cols="100" placeholder="Any notes here..."></textarea>
+                </div>
+            </div>
             <button id="journal_btn" class="btn btn-outline-dark" type="submit">Submit</button>
         </form>
     </div>

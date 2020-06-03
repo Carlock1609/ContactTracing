@@ -1,9 +1,4 @@
-input {
-    border-radius: 7px;
-}
-select {
-    border-radius: 7px;
-}
+
 
 /* LARGE */
 @media only screen and (min-width: 751px) {
@@ -43,6 +38,15 @@ select {
 
 
     /* FORMS */
+    input {
+        border-radius: 7px;
+    }
+    textarea {
+        border-radius: 7px;
+    }
+    select {
+        border-radius: 7px;
+    }
 }
 
 
@@ -100,4 +104,13 @@ select {
 
 
       /* FORMS */
+    input {
+        border-radius: 7px;
+    }
+    textarea {
+        border-radius: 7px;
+    }
+    select {
+        border-radius: 7px;
+    }
 }

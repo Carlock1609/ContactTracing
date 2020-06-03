@@ -14,10 +14,3 @@ body {
     background: rgb(39,39,39, 0.5);
     z-index: 100;
 } */
-#cover_photo {
-    height: 80%;
-    /* background-image: url('../images/cover_photo2.png'); */
-    /* background-repeat: no-repeat;
-    background-position: left; */
-    top: 50%; 
-}

@@ -10,7 +10,7 @@ const passport = require('passport');
 
 // Register User - POST
 exports.register_created = function(req, res) {
-    Users.register(new Users({email: req.body.email, username: req.body.username}), req.body.password, function(err, user) {
+    Users.register(new Users({email: req.body.email, username: req.body.username, password: req.body.password}), req.body.password, function(err, user) {
         if(err) {
             console.log(err);
             // return res.redirect('/');

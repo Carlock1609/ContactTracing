@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const compression = require('compression')
 // Authentication imports - passport
 const localStrategy = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
+// const passportLocalMongoose = require('passport-local-mongoose');
 const passport = require('passport');
 
 // import models
@@ -30,6 +30,8 @@ mongoose.connect('mongodb://localhost/Contact_Tracing', {
 app.use(compression())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+app.set('view engine', 'ejs'); // setting the view engine, were using ejs
 
 // Middleware to take care of CORS error
 app.use((req, res, next) => {

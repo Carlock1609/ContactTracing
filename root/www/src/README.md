@@ -1,0 +1,1 @@
+Theres no need to have routes for the index page. All im doing is making requests to the API and it returns a promise that it will display. So I dont need ruotes on the client side unless i have different pages. BUT then i would simply just have thosse as different calls to AWS

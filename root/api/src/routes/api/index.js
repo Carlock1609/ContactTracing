@@ -3,8 +3,8 @@ const router = express.Router();
 
 
 // importing the controllers
-const indexController = require('../controllers/indexController');
-const usersController = require('../controllers/usersController');
+const indexController = require('../../controllers/indexController');
+const usersController = require('../../controllers/usersController');
 
 // Get index page
 // This page i want to have Calender and journal data on it.

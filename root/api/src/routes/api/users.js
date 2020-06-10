@@ -4,7 +4,7 @@ const router = express.Router();
 // AUTH
 const passport = require('passport');
 // const connectEnsureLogin = require('connect-ensure-login');
-const usersController = require('../controllers/usersController');
+const usersController = require('../../controllers/usersController');
 
 
 //  Register page

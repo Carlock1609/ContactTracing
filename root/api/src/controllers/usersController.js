@@ -9,33 +9,39 @@ const passport = require('passport');
 // }
 
 // Register User - POST
-exports.register_created = function(req, res) {
-    Users.register(new Users({email: req.body.email, username: req.body.username, password: req.body.password}), req.body.password, function(err, user) {
-        if(err) {
+exports.register_created = async (req, res) => {
+    const { email, username, password } = req.body;
+
+    const newUser = { email, username, password }; 
+
+    await Users.register(new Users({newUser}), password, async (err, user) => {
+        try {
             console.log(err);
-            // return res.redirect('/');
+            passport.authenticate('local')(req,res, function(){
+                console.log(user);
+                res.send(Object.values(user));
+                // res.redirect('https://127.0.0.1:8001/')
+            })
+        } catch(err) {
+            console.log(err.message);
         }
-        passport.authenticate('local')(req,res, function(){
-            console.log(user)
-            res.send(Object.values(user))
-            // res.redirect('https://127.0.0.1:8001/')
-        });
+        // return res.redirect('/');
     });
 }
 
 // Login and authenticate user - GET
-exports.login = function(req, res) {
+exports.login = async (req, res) => {
     
     // fill this out soon. right now middleware is being used.
     res.send({currentUser:req.user})
 }
 
 // Logout user - POST
-exports.logout = function(req, res) {
-        req.logout();
-        // req.flash('success', 'Logged out!');
-        // res.redirect('https://127.0.0.1:8001/');
-    };
+exports.logout = async (req, res) => {
+    req.logout();
+    // req.flash('success', 'Logged out!');
+    // res.redirect('https://127.0.0.1:8001/');
+};
 
 
     

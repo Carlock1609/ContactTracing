@@ -13,12 +13,12 @@ const Users = require('../models/users');
 //   });
 
 // Sends User page Dynamic data to list - GET
-exports.index = function(req, res) {
+exports.index = async (req, res) => {
     // Loading all Calendar entries to display
     // Later we need to have a filter for only the logged in users Data
 
     // THIS WORKED YASSS -  This sends the user a json object
-    Users.find()
+    await Users.find()
         .then((users) => {
             console.log(users)
             res.send(Object.values(users));
@@ -37,17 +37,19 @@ exports.index = function(req, res) {
     }
 
 // Creates calendar entry - POST
-exports.create_calendar_entry = function(req,res) {
-    let user = req.user; 
-    let date = req.body.date;
-    let time = req.body.time;
-    let choice = req.body.choice;
-    let notes = req.body.notes;
+exports.create_calendar_entry = async (req,res) => {
+    // let user = req.user; 
+    // let date = req.body.date;
+    // let time = req.body.time;
+    // let choice = req.body.choice;
+    // let notes = req.body.notes;
+    // Deconstructed
+    let { user, date, time, choice, notes } = req.body;
 
+    let newEntry = { user, date, time, choice, notes, owner:user }
+    // let newEntry = {date:date, time:time, choice:choice, notes:notes, owner:user}
     
-    let newEntry = {date:date, time:time, choice:choice, notes:notes, owner:user}
-    
-    CalendarEntry.create(newEntry, function(err, newlyCreated) {
+    await CalendarEntry.create(newEntry, function(err, newlyCreated) {
         if(err) {
             console.log('Not Successful' + err);
         } else {
@@ -59,24 +61,27 @@ exports.create_calendar_entry = function(req,res) {
 }
 
 // Creates Journal entry - POST
-exports.create_journal_entry = function(req, res) {
-    let user = req.user
-    let date = req.body.date;
-    let time = req.body.time;
-    let activity = req.body.activity;
-    let location = req.body.location;
-    let choice1 = req.body.choice1;
-    let choice2 = req.body.choice2;
-    let contact = req.body.contact;
-    let notes = req.body.notes;
+exports.create_journal_entry = async (req, res) => {
+    // let user = req.user
+    // let date = req.body.date;
+    // let time = req.body.time;
+    // let activity = req.body.activity;
+    // let location = req.body.location;
+    // let choice1 = req.body.choice1;
+    // let choice2 = req.body.choice2;
+    // let contact = req.body.contact;
+    // let notes = req.body.notes;
+    let { user, date, time, activity, location, choice1, choice2, contact, notes } = req.body;
 
-    let newEntry = {owner:user, date:date, time:time, activity:activity, location:location, choice1:choice1, choice2:choice2, contact:contact, notes:notes,}
+    // let newEntry = {owner:user, date:date, time:time, activity:activity, location:location, choice1:choice1, choice2:choice2, contact:contact, notes:notes,}
+    let newEntry = { user, date, time, activity, location, choice1, choice2, contact, notes, owner:user };
 
-    JournalEntry.create(newEntry, function(err, newlyCreated) {
-        if(err) {
-            console.log('Not Successful' + err);
-        } else {
+    await JournalEntry.create(newEntry, function(err, newlyCreated) {
+        try{
             console.log('Success!' + newlyCreated);
+
+        } catch(err) {
+            console.log('Not Successful' + err);
         }
     })
 

@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 const journalEntrySchema = new mongoose.Schema({
     date: {
-        type: String, 
+        type: Date, 
         required: true
-    
     },
     time: {
         type: String, 

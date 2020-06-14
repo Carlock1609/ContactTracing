@@ -2,7 +2,7 @@
 This is a virtual Journal for keeping track of any contact with COVID. 
 
 ## Stacks used:
-- MEN: MongoDB, Express, Node, Javascript.
+- MERN: MongoDB, Express, React, Node, Javascript.
 
 ## Functionalities:
 - User can click on calendar and select an option, leave a note, and leave a Journal Entry.

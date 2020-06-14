@@ -7,6 +7,8 @@ const localStrategy = require('passport-local');
 // const passportLocalMongoose = require('passport-local-mongoose');
 const passport = require('passport');
 
+const User = require('./src/models/User');
+
 // connecting mongoose
 connectDB();
 
@@ -28,8 +30,8 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // Setting up routes
-const indexRoutes = require('./src/routes/index');
-const usersRoutes = require('./src/routes/users');
+const indexRoutes = require('./src/routes/api/index');
+const usersRoutes = require('./src/routes/api/users');
 
 // Mounting routes on app
 app.use('/', indexRoutes);
@@ -41,6 +43,7 @@ app.use('/users', usersRoutes);
 // https.createServer(sslOptions, app).listen(8000)
 // console.log('SERVERUP!')
 const PORT = process.env.PORT || 8000;
+
 app.listen(PORT, () => {
     console.log('SERVER IS UP! @ ' + PORT);
 });

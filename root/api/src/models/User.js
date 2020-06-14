@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
         type: String, 
         required: true
     },
-    username: {
+    name: {
         type: String, 
         required: true
     },
@@ -20,6 +20,6 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
-userSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);

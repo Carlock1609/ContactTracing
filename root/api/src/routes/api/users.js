@@ -1,39 +1,31 @@
 const express = require('express');
 const router = express.Router();
 
-// AUTH
-const passport = require('passport');
+// middleware auth.register uses express-validator
+const auth = require('../../middlewares/auth');
 // const connectEnsureLogin = require('connect-ensure-login');
 const usersController = require('../../controllers/usersController');
-const { check } = require('express-validator');
 
-//  Register page
-// router.get('/register', usersController.register)
 
 // Register post
 router.post(
 	'/register',
-	[
-		check('name', 'Name is required')
-			.not()
-			.isEmpty(),
-		check('email', 'Email is required')
-			.isEmail(),
-		check('password', 'Password is required')
-			.isLength({ min:6 }),
-	],
-	usersController.register_created
-	)
+	auth.register,
+	usersController.register
+);
 
-// LOGIN ROUTES - also middleware
-router.post('/login', passport.authenticate('local', 
-	{
-		successRedirect: '/',
-		failureRedirect: '/',
-    }), usersController.login);
-    
+// Login route
+router.post(
+	'/login',
+	auth.authorized,
+	usersController.login
+);
+
 // Logout route
-router.get('/logout', usersController.logout)
+router.get(
+	'/logout', 
+	usersController.logout
+);
 
 
 module.exports = router;

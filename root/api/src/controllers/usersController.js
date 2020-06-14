@@ -9,8 +9,7 @@ const User = require('../models/User');
 exports.register_created = async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        console.log('IN HERE')
-        return res.status(400).json({ errors: errors.array() })
+        return res.status(400).json({ errors: errors.array() });
     }
     
     const { name, email, password } = req.body;

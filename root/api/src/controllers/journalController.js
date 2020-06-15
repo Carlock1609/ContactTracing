@@ -60,8 +60,29 @@ exports.get_entry = async (req, res) => {
     } catch (err) {
         console.log(err.message);
         if(err.kind === 'ObjectId') {
-            return res.status(404).json({ msg: 'Post not found' });
+            return res.status(404).json({ msg: 'Journal entry not found' });
         }
         res.status(500).send('Server error');
     }
 };
+
+// Delete journal entry - DELETE
+exports.delete_entry = async (req, res) => {
+    try {
+        const journal = await Journal.findById(req.params.id);
+
+        if(!journal) {
+            return res.status(404).json({ msg: 'Journal entry not found' })
+        }
+
+        await journal.remove();
+
+        res.json({ msg: 'Journal entry removed' });
+    } catch (err) {
+        console.log(err.message);
+        if(err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Journal entry not found' });
+        }
+        res.status(500).send('Server error');
+    }
+}

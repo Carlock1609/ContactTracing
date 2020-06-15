@@ -61,3 +61,24 @@ exports.get_entry = async (req, res) => {
         res.status(500).send('Server error');
     }
 };
+
+// Delete calender entry - DELETE
+exports.delete_entry = async (req, res) => {
+    try {
+        const calendar = await Calendar.findById(req.params.id);
+
+        if(!calendar) {
+            return res.status(404).json({ msg: 'Calendar entry not found' })
+        }
+
+        await calendar.remove();
+
+        res.json({ msg: 'Calendar entry removed' });
+    } catch(err) {
+        console.log(err.message);
+        if(err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Calendar entry not found' });
+        }
+        res.status(500).send('Server error');
+    }
+}

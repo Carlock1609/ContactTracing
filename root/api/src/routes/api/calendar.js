@@ -23,11 +23,23 @@ router.get(
     calendarController.get_calendar
 );
 
+// @route  GET api/calendar/:id
+// @desc   Get calendar entry by id
+// @access Private
 router.get(
     '/:id',
     auth.authorized,
     calendarController.get_entry
 
+)
+
+// @route  DELETE api/calendar/:id
+// @desc   Delete a calendar entry
+// @access Private
+router.delete(
+    '/:id',
+    auth.authorized,
+    calendarController.delete_entry
 )
 
 

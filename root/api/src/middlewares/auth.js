@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check } = require('express-validator');
 
+// **USERS**
 // Register User
 exports.register = (
     [
@@ -25,6 +26,8 @@ exports.login = (
     ]
 );
 
+// **CALENDAR**
+// Calendar post
 exports.calendar_post = (
     [
         check('date', 'Date is required')
@@ -42,6 +45,8 @@ exports.calendar_post = (
     ]
 );
 
+// **JOURNAL**
+// Journal post
 exports.journal_post = (
     [
         check('date', 'Date is required')
@@ -71,6 +76,7 @@ exports.journal_post = (
     ]
 );
 
+// **AUTH**
 // Checks jwt token, this is for any private requests
 exports.authorized = (req, res, next) => {
     // Get token from header

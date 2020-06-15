@@ -23,10 +23,22 @@ router.get(
     journalController.get_journal
 );
 
+// @route  GET api/journal/:id
+// @desc   Get journal entry by id
+// @access Private
 router.get(
     '/:id',
     auth.authorized,
     journalController.get_entry
+)
+
+// @route  DELETE api/journal/:id
+// @desc   Delete a journal entry
+// @access Private
+router.delete(
+    '/:id',
+    auth.authorized,
+    journalController.delete_entry
 )
 
 module.exports = router;

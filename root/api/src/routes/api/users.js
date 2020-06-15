@@ -16,5 +16,10 @@ router.post(
 	usersController.register
 );
 
+router.delete(
+	'/',
+	auth.authorized,
+	usersController.delete_user
+)
 
 module.exports = router;

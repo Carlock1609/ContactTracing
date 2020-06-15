@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
+const Journal = require('../models/Journal');
+const Calendar = require('../models/Calendar');
 
 
 // Register User - POST
@@ -56,4 +58,20 @@ exports.register = async (req, res) => {
     }
 };
 
+// Delete user - DELETE
+exports.delete_user = async (req, res) => {
+    try {
+        // remove journal
+        await Journal.findByIdAndRemove({ _id: req.user.id });
+        // remove calendar
+        await Calendar.findByIdAndRemove({ _id: req.user.id });
+        // remove user
+        await User.findOneAndRemove({ _id: req.user.id });
+
+        res.json({ msg: 'User deleted' })
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server error');
+    }
+};
     

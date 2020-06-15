@@ -1,8 +1,9 @@
 const { validationResult } = require('express-validator');
 
 const Journal = require('../models/Journal');
+const User = require('../models/User');
 
-// Gets all journal entries
+// Gets all journal entries - GET
 exports.get_journal = async (req, res) => {
     try {
         const journal = await Journal.findById(req.user.id);
@@ -25,12 +26,21 @@ exports.journal_entry = async (req, res) => {
         return res.status(400).json({ errors: errors.array() });
     }
     
-    const { user, date, time, activity, location, choice1, choice2, contact, notes } = req.body;
-    
-    const newEntry = { user, date, time, activity, location, choice1, choice2, contact, notes, owner:user };
-    
     try{
-        const entry = new Journal(newEntry);
+        // finds user but leaves out the password
+        const user = await User.findById(req.user.id).select('-password');
+
+        const entry = new Journal({
+            date: req.body.date,
+            time: req.body.time,
+            activity: req.body.activity,
+            location: req.body.location,
+            choice1: req.body.choice1,
+            choice2: req.body.choice2,
+            contact: req.body.contact,
+            notes: req.body.notes,
+            user: user.id
+        });
 
         await entry.save();
 

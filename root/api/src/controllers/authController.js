@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { validationResult } = require('express-validator');
 
-// test postman
+// test postman - get user
 exports.get_user = async (req, res) => {
     try{
         let user = await User.findById(req.user.id).select('-password');

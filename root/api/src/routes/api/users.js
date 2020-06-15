@@ -15,18 +15,5 @@ router.post(
 	usersController.register
 );
 
-// Login route
-router.post(
-	'/login',
-	auth.authorized,
-	usersController.login
-);
-
-// Logout route
-router.get(
-	'/logout', 
-	usersController.logout
-);
-
 
 module.exports = router;

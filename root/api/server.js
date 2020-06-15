@@ -16,7 +16,7 @@ const dashboardRoutes = require('./src/routes/api/dashboard');
 
 
 // Mounting routes on app
-// app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 

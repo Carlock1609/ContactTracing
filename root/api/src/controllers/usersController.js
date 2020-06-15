@@ -57,19 +57,4 @@ exports.register = async (req, res) => {
     }
 };
 
-// Login and authenticate user - GET
-exports.login = async (req, res) => {
-    
-    // fill this out soon. right now middleware is being used.
-    res.send({currentUser:req.user});
-};
-
-// Logout user - POST
-exports.logout = async (req, res) => {
-    req.logout();
-    // req.flash('success', 'Logged out!');
-    // res.redirect('https://127.0.0.1:8001/');
-};
-
-
     

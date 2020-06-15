@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
-const { check, validationResult } = require('express-validator');
+const { check } = require('express-validator');
 
-exports.register = ([
-    
+exports.register = (
+    [
 		check('name', 'Name is required')
 			.not()
 			.isEmpty(),
@@ -11,6 +11,16 @@ exports.register = ([
 			.isEmail(),
 		check('password', 'Password is required')
 			.isLength({ min:6 }),
+    ]
+);
+
+// Login user
+exports.login = (
+    [
+        check('email', 'Please include a valid email')
+            .isEmail(),
+        check('password', 'Password is required')
+            .exists()
     ]
 );
 

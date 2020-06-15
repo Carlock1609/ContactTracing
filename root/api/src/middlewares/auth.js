@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check } = require('express-validator');
 
+// Register User
 exports.register = (
     [
 		check('name', 'Name is required')
@@ -21,6 +22,23 @@ exports.login = (
             .isEmail(),
         check('password', 'Password is required')
             .exists()
+    ]
+);
+
+exports.calendar_post = (
+    [
+        check('date', 'Date is required')
+            .not()
+            .isEmpty(),
+        check('time', 'Time is required')
+            .not()
+            .isEmpty(),
+        check('choice', 'Choice is required')
+            .not()
+            .isEmpty(),
+        check('notes', 'Notes are required')
+        .not()
+        .isEmpty()
     ]
 );
 

@@ -3,12 +3,13 @@ const router = express.Router();
 
 // middleware auth.register uses express-validator
 const auth = require('../../middlewares/auth');
-// const connectEnsureLogin = require('connect-ensure-login');
+
 const usersController = require('../../controllers/usersController');
-// const { check } = require('express-validator');
 
 
-// Register post
+// @route  POST api/users
+// @desc   Register user
+// @access Public
 router.post(
 	'/',
 	auth.register,

@@ -6,11 +6,7 @@ const User = require('../models/User');
 // Gets all journal entries - GET
 exports.get_journal = async (req, res) => {
     try {
-        const journal = await Journal.findById(req.user.id);
-
-        if(!journal) {
-            return res.status(404).json({ msg: 'Journal entries not found' })
-        }
+        const journal = await Journal.find({user:req.user.id});
 
         res.json(journal)
     } catch(err) {

@@ -6,13 +6,8 @@ const User = require('../models/User');
 // Get calendar - GET
 exports.get_calendar = async (req, res) => {
     try{
-        
-        const calendar = await Calendar.findById(req.user.id);
-    
-        if(!calendar) {
-            return res.status(404).json({ msg: 'No calendar entries found' });
-        }
-    
+        const calendar = await Calendar.find({user:req.user.id});
+
         res.json(calendar)
     } catch(err) {
         console.log(err.message);

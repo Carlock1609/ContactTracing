@@ -18,9 +18,9 @@ const calendarEntrySchema = new mongoose.Schema({
         type: String, 
         required: true
     },
-    owner: {
+    user: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'user',
     }
 })
 

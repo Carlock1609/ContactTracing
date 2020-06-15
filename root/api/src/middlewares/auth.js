@@ -38,7 +38,36 @@ exports.calendar_post = (
             .isEmpty(),
         check('notes', 'Notes are required')
         .not()
-        .isEmpty()
+            .isEmpty()
+    ]
+);
+
+exports.journal_post = (
+    [
+        check('date', 'Date is required')
+            .not()
+            .isEmpty(),
+        check('time', 'Time is required')
+            .not()
+            .isEmpty(),
+        check('activity', 'Activity required')
+            .not()
+            .isEmpty(),
+        check('location', 'Location is required')
+            .not()
+            .isEmpty(),
+        check('choice1', 'Choice is required')
+            .not()
+            .isEmpty(),
+        check('choice2', 'Choice is required')
+            .not()
+            .isEmpty(),
+        check('contact', 'Contact is rquired')
+            .not()
+            .isEmpty(),
+        check('notes', 'Notes are required')
+            .not()
+            .isEmpty()
     ]
 );
 

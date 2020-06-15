@@ -11,7 +11,7 @@ const journalController = require('../../controllers/journalController');
 router.get(
     '/', 
     auth.authorized, 
-    journalController.get_all_journal
+    journalController.get_journal
 );
 
 // @route  POST api/journal
@@ -19,7 +19,7 @@ router.get(
 // @access Private
 router.post(
     '/', 
-    auth.authorized, 
+    [auth.authorized, auth.journal_post], 
     journalController.journal_entry
 );
 

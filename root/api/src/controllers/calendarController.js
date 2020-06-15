@@ -3,18 +3,6 @@ const { validationResult } = require('express-validator');
 const Calendar = require('../models/Calendar');
 const User = require('../models/User');
 
-// Get calendar - GET
-exports.get_calendar = async (req, res) => {
-    try{
-        const calendar = await Calendar.find({user:req.user.id});
-
-        res.json(calendar)
-    } catch(err) {
-        console.log(err.message);
-        res.status(500).send('Server error')
-    }
-};
-
 // Creates calendar entry - POST
 exports.calendar_entry = async (req,res) => {
     const errors = validationResult(req);
@@ -40,5 +28,36 @@ exports.calendar_entry = async (req,res) => {
     } catch(err) {
         console.log(err.message);
         return res.status(500).send('Server error');
+    }
+};
+
+// Get calendar - GET
+exports.get_calendar = async (req, res) => {
+    try{
+        const calendar = await Calendar.find({user:req.user.id});
+
+        res.json(calendar)
+    } catch(err) {
+        console.log(err.message);
+        res.status(500).send('Server error')
+    }
+};
+
+// Get calendar entry - GET
+exports.get_entry = async (req, res) => {
+    try {
+        const calendar = await Calendar.findById(req.params.id);
+
+        if(!calendar) {
+            return res.status(404).json({ msg: 'Calendar entry not found' });
+        }
+
+        res.json(calendar)
+    } catch (err) {
+        console.log(err.message);
+        if(err.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Post not found' });
+        }
+        res.status(500).send('Server error');
     }
 };

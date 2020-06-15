@@ -1,17 +1,27 @@
 const config = require('config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
+
 // Register User - POST
 exports.register = async (req, res) => {
-    const { name, email, password } = req.body; 
+    const errors = validationResult(req);
+    console.log(req.body)
+    if(!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { name, email, password } = req.body;
+
     try {
         let user = await User.findOne({ email });
         if(user) {
             return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
         }
+
         user = new User({
             name,
             email,

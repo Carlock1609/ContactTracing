@@ -7,15 +7,18 @@ const connectDB = require('./config/db');
 connectDB();
 
 // middleware
-app.use(express.urlencoded({extended:true}));
+app.use(express.json({extended:false}));
 
 // Setting up routes
-const indexRoutes = require('./src/routes/api/index');
+const authRoutes = require('./src/routes/api/auth');
 const usersRoutes = require('./src/routes/api/users');
+const dashboardRoutes = require('./src/routes/api/dashboard');
+
 
 // Mounting routes on app
-app.use('/', indexRoutes);
-app.use('/users', usersRoutes);
+// app.use('/api/auth', authRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 const PORT = process.env.PORT || 8000;
 

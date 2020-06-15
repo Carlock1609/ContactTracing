@@ -5,11 +5,12 @@ const router = express.Router();
 const auth = require('../../middlewares/auth');
 // const connectEnsureLogin = require('connect-ensure-login');
 const usersController = require('../../controllers/usersController');
+// const { check } = require('express-validator');
 
 
 // Register post
 router.post(
-	'/register',
+	'/',
 	auth.register,
 	usersController.register
 );

@@ -4,7 +4,7 @@ const JournalEntry = require('../models/Journal');
 const User = require('../models/User');
 
 // Sends User page Dynamic data to list - GET
-exports.index = async (req, res) => {
+exports.dashboard = async (req, res) => {
     try {
         // query for all users
         let users = await User.find();
@@ -35,7 +35,6 @@ exports.create_calendar_entry = async (req,res) => {
 
         return res.json(entry);
     } catch(err) {
-        console.log(err.message);
         return res.status(500).send('Server error');
     }
 };
@@ -57,17 +56,6 @@ exports.create_journal_entry = async (req, res) => {
         return res.status(500).send('Server error');
     }
 };
-
-// Logout current user - POST
-exports.logout = function(req, res) {
-    req.logout();
-};
-
-
-
-
-
-
 
 
 

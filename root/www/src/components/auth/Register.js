@@ -35,44 +35,52 @@ const Register = () => {
     return (
         <Fragment>
             <section className="container-fluid text-center">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Sign Up</h5>
-                        <form onSubmit={e => onSubmit(3)}>
-                            <input 
-                                type="text"
-                                name="name"
-                                value={name}
-                                placeholder="Name here..."
-                                onChange={e => onChange(e)}
-                                required
-                            />
-                            <input 
-                                type="email"
-                                name="email"
-                                value={email}
-                                placeholder="Email address..."
-                                onChange={e => onChange(e)}
-                                required
-                            />
-                            <input 
-                                type="password"
-                                name="password"
-                                minLength="6"
-                                value={password}
-                                placeholder="Password here..."
-                                onChange={e => onChange(e)}
-                            />
-                            <input 
-                                type="password2"
-                                name="password2"
-                                minLength="6"
-                                value={password2}
-                                placeholder="Validate Password here"
-                                onChange={e => onChange(e)}
-                            />
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Sign Up</h5>
+                        <form className="form" onSubmit={e => onSubmit(e)}>
+                            <div className="form-group">
+                                <input 
+                                    type="text"
+                                    name="name"
+                                    value={name}
+                                    placeholder="Name here..."
+                                    onChange={e => onChange(e)}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    type="email"
+                                    name="email"
+                                    value={email}
+                                    placeholder="Email address..."
+                                    onChange={e => onChange(e)}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    type="password"
+                                    name="password"
+                                    minLength="6"
+                                    value={password}
+                                    placeholder="Password here..."
+                                    onChange={e => onChange(e)}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    type="password2"
+                                    name="password2"
+                                    minLength="6"
+                                    value={password2}
+                                    placeholder="Validate Password here"
+                                    onChange={e => onChange(e)}
+                                />
+                            </div>
+                            <input type="submit" className="btn btn-outline-dark" value="Register"/>
                         </form>
-                        <input href="#" className="btn btn-outline-dark" value='Register'>Go!</input>
                     </div>
                     <p className="my-1">
                         Already have an account? <Link to="/login">Sign in</Link>

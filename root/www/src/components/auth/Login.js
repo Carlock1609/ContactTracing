@@ -28,28 +28,32 @@ const Login = () => {
     return (
         <Fragment>
             <section className="container-fluid text-center">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Login</h5>
-                        <form onSubmit={e => onSubmit(3)}>
-                            <input 
-                                type="email"
-                                name="email"
-                                value={email}
-                                placeholder="Email address..."
-                                onChange={e => onChange(e)}
-                                required
-                            />
-                            <input 
-                                type="password"
-                                name="password"
-                                minLength="6"
-                                value={password}
-                                placeholder="Password here..."
-                                onChange={e => onChange(e)}
-                            />
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Login</h5>
+                        <form className="form" onSubmit={e => onSubmit(e)}>
+                            <div className="form-group">
+                                <input 
+                                    type="email"
+                                    name="email"
+                                    value={email}
+                                    placeholder="Email address..."
+                                    onChange={e => onChange(e)}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    type="password"
+                                    name="password"
+                                    minLength="6"
+                                    value={password}
+                                    placeholder="Password here..."
+                                    onChange={e => onChange(e)}
+                                />
+                            </div>
+                            <input type="submit" className="btn btn-outline-dark" value="Login"/>
                         </form>
-                        <input to="#" className="btn btn-outline-dark" value='Login'>Go!</input>
                     </div>
                     <p className="my-1">
                         Don't have an account? <Link to="/register">Sign Up</Link>

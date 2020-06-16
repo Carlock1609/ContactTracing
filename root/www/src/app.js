@@ -6,6 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Index from './components/layout/Index';
 
 // REDUX 
 import { Provider } from 'react-redux';
@@ -25,6 +26,7 @@ const App = () => (
           {/* 'Switch' can only hold routes.  */}
           {/* <Alert /> */}
           <Switch>
+            <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register}/>
           </Switch>

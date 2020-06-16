@@ -6,6 +6,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Alert from './components/layout/Alert';
 // import Index from './components/layout/Index';
 
 // REDUX 
@@ -24,7 +25,7 @@ const App = () => (
           {/* These are the routes - Depending on what the client requests, determines which one gets execxuted. */}
           {/* The Routes are components, They work a lot like partials in express or base django*/}
           {/* 'Switch' can only hold routes.  */}
-          {/* <Alert /> */}
+          <Alert />
           <Switch>
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register}/>

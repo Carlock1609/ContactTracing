@@ -1,12 +1,13 @@
 import React, { Fragment, useState } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+// This is for anchor tags or href/ links
 import { Link } from 'react-router-dom';
+import { setAlert } from '../../actions/alert';
+import PropTypes from 'prop-types'
 
 
-
-const Register = () => {
-    // client-side js goes here
-    
+// WHAT IS PROPS
+const Register = ({ setAlert }) => {
     // formData are the inputs
     // setFormData is the typing inside of the inputs
     const [formData, setFormData] = useState({
@@ -26,7 +27,9 @@ const Register = () => {
     const onSubmit = async e => {
         e.preventDefault();
         if(password !== password2) {
-            console.log('Passwords do not match')
+            // This will get passed in to are actions - and will be the msg
+            // LOOK AT THE ALERT COMPONENT
+            setAlert('Passwords do not match', 'danger');
         } else {
             console.log('Success!')
         }
@@ -71,7 +74,7 @@ const Register = () => {
                             </div>
                             <div className="form-group">
                                 <input 
-                                    type="password2"
+                                    type="password"
                                     name="password2"
                                     minLength="6"
                                     value={password2}
@@ -91,4 +94,9 @@ const Register = () => {
     )
 }
 
-export default Register;
+Register.protoTypes = {
+    setAlert: PropTypes.func.isRequired,
+}
+
+
+export default connect(null, { setAlert })(Register);

@@ -4,8 +4,9 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
-const Journal = require('../models/Journal');
-const Calendar = require('../models/Calendar');
+// Depends on if i want the user to be able to delete their profile - should i have this function?
+// const Journal = require('../models/Journal');
+// const Calendar = require('../models/Calendar');
 
 
 // Register User - POST

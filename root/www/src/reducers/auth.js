@@ -1,6 +1,8 @@
 import {
     REGISTER_SUCCESS,
-    REGISTER_FAIL
+    REGISTER_FAIL,
+    USER_LOADED,
+    AUTH_ERROR
 } from '../actions/types';
 
 // Looking in the redux store
@@ -17,6 +19,13 @@ export default function(state = initialState, action) {
     const { type, payload } = action;
 
     switch(type) {
+        case USER_LOADED:
+            return {
+                ...state,
+                isAuthenticated: true,
+                loading: false,
+                user: payload
+            }
         case REGISTER_SUCCESS:
             // payload is an object containing token etc,.
             localStorage.setItem('token', payload.token);
@@ -29,6 +38,7 @@ export default function(state = initialState, action) {
                 loading: false
             }
         case REGISTER_FAIL:
+            case AUTH_ERROR:
             // If fails we want to remove the token completely
             localStorage.removeItem('token');
             return {

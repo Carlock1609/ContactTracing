@@ -1,14 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 // This is for anchor tags or href/ links
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types'
 
 
 // WHAT IS PROPS
-const Register = ({ setAlert, register }) => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
     // formData are the inputs
     // setFormData is the typing inside of the inputs
     const [formData, setFormData] = useState({
@@ -34,6 +34,11 @@ const Register = ({ setAlert, register }) => {
         } else {
             register({ name, email, password });
         }
+    };
+
+      // Redirect if loggged in
+    if(isAuthenticated) {
+        return <Redirect to="/dashboard" />
     };
 
     return (
@@ -97,11 +102,16 @@ const Register = ({ setAlert, register }) => {
 
 Register.protoTypes = {
     setAlert: PropTypes.func.isRequired,
-    register: PropTypes.func.isRequired
-}
+    register: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+};
 
+// get the auth state
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
 
 export default connect(
-    null, 
+    mapStateToProps, 
     { setAlert, register }
 )(Register);

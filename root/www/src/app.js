@@ -7,7 +7,8 @@ import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
-// import Index from './components/layout/Index';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 // REDUX 
 import { Provider } from 'react-redux';
@@ -44,7 +45,11 @@ const App = () => {
             <Alert />
             <Switch>
               <Route exact path='/login' component={Login} />
-              <Route exact path='/register' component={Register}/>
+              <Route exact path='/register' component={Register} />
+              {/* Private route is a seperate component that you can call to hide components unless validated */}
+              {/* Do this if you don't want users to be on the page unless validated */}
+              {/* This is like django decorators @login_required */}
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
             </Switch>
           </section>
         </Fragment>

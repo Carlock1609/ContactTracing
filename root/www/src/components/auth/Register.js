@@ -6,7 +6,6 @@ import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types'
 
-
 // WHAT IS PROPS
 const Register = ({ setAlert, register, isAuthenticated }) => {
     // formData are the inputs
@@ -98,7 +97,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             </section>
         </Fragment>
     )
-}
+};
 
 Register.protoTypes = {
     setAlert: PropTypes.func.isRequired,

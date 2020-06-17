@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
     // Redirect if loggged in
     if(isAuthenticated) {
         return <Redirect to="/dashboard" />
-    }
+    };
 
     return (
         <Fragment>
@@ -68,7 +68,7 @@ const Login = ({ login, isAuthenticated }) => {
             </section>
         </Fragment>
     )
-}
+};
 
 Login.propTypes = {
     login: PropTypes.func.isRequired,

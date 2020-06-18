@@ -12,27 +12,22 @@
 - '/api/users' - root
 - POST - '/' -> Register's user
 
-### Calendar
-<!-- Calendar -->
-- '/api/calendar' - root
-- POST - '/' -> Creates journal entry
-- GET - '/' -> Gets all journal entries for the auth user
-- GET - '/:id' -> Gets specific journal entry by id
-- DELETE - '/:id' -> Deletes specific journal entry by id
-
-### Journal
-<!-- Journal -->
-- '/api/journal' - root
-- POST - '/' -> Creates journal entry
-- GET - '/' -> Gets all journal entries for the auth user
-- GET - '/:id' -> Gets specific journal entry by id
-- DELETE - '/:id' -> Deletes specific journal entry by id
+### Dashboard
+- '/api/dashboard' - root
+- GET - '/' -> Gets user dashboard
+<!-- journal -->
+- PUT - '/journal' -> Creates journal entry
+- GET - '/journal/:id' -> Gets journal entry by id
+- DELETE - '/journal/:id' -> Deletes journal entry by id
+<!-- calendar -->
+- PUT - '/calendar' -> Creates calendar entry
+- GET - '/calendar/:id' -> Gets calendar entry
+- DELETE - '/calendar/:id' -> Deletes calendar entry
 <!--  -->
 
 # MODELS
 <!-- MODELS -->
-- Calendar
-- Journal
+- Dashboard
 - User
 <!--  -->
 
@@ -44,12 +39,9 @@
 - register
 - login
 
-### Calendar
-<!-- CALENDAR -->
+### Dashboard
+<!-- Dashboard -->
 - calendar_post
-
-### Journal
-<!-- JOURNAL -->
 - journal_post
 
 ### Auth

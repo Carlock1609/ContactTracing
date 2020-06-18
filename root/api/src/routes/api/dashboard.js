@@ -5,15 +5,6 @@ const auth = require('../../middlewares/auth');
 
 const dashboardController = require('../../controllers/dashboardController');
 
-// @route  POST api/dashboard
-// @desc   Create a dashboard  for user
-// @access Private
-router.post(
-    '/', 
-    auth.authorized, 
-    dashboardController.create_dashboard
-);
-
 // @route  GET api/dashboard
 // @desc   Get all dashboard entries
 // @access Private

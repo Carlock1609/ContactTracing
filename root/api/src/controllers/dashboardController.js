@@ -3,26 +3,6 @@ const { validationResult } = require('express-validator');
 const Dashboard = require('../models/Dashboard');
 const User = require('../models/User');
 
-// FIGURE OUT HOW TO CREATE DASHBOARD WHEN USER IS CREATED
-// Creates Dashboard entry - POST
-exports.create_dashboard = async (req, res) => {
-    try{
-        // finds user but leaves out the password
-        const user = await User.findById(req.user.id).select('-password');
-        
-        const dashboard = new Dashboard({
-            user: user.id
-        });
-        
-        await dashboard.save();
-        
-        res.json(dashboard);
-    } catch(err) {
-        console.log(err.message);
-        return res.status(500).send('Server error');
-    }
-};
-
 // Get users dashboard - GET
 exports.get_dashboard = async (req, res) => {
     try {

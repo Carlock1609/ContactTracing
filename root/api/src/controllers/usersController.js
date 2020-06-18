@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
 const User = require('../models/User');
+const Dashboard = require('../models/Dashboard');
 // Depends on if i want the user to be able to delete their profile - should i have this function?
 // const Journal = require('../models/Journal');
 // const Calendar = require('../models/Calendar');
@@ -35,8 +36,14 @@ exports.register = async (req, res) => {
         // Encrypt password - bcrypt
         // This takes in a plain text password
         user.password = await bcrypt.hash(password, salt);
-
-        await user.save()
+        
+        // Automatically creating dashboard for user on creation
+        const dashboard = new Dashboard({
+            user: user.id
+        });
+        
+        await user.save();
+        await dashboard.save();
 
         const payload = {
             user: {

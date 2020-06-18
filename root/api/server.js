@@ -12,15 +12,11 @@ app.use(express.json({extended:false}));
 // Setting up routes
 const authRoutes = require('./src/routes/api/auth');
 const usersRoutes = require('./src/routes/api/users');
-const calendarRoutes = require('./src/routes/api/calendar');
-const journalRoutes = require('./src/routes/api/journal');
 const dashboardRoutes = require('./src/routes/api/dashboard');
 
 // Mounting routes on app
 app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
-app.use('/api/calendar', calendarRoutes);
-app.use('/api/journal', journalRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 const PORT = process.env.PORT || 8000;

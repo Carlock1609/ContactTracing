@@ -8,12 +8,12 @@ import {
 // Get current users calendar/journal
 export const getCurrentDashboard = () => async dispatch => {
     try {
-        const res_journal = await axios.get('/api/journal');
-        const res_calendar = await axios.get('/api/calendar');
+        const res = await axios.get('/api/dashboard');
+     
 
         dispatch({
             type: GET_DASHBOARD,
-            payload: [res_journal, res_calendar]
+            payload: res.data
         });
     } catch (err) {
         dispatch({

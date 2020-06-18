@@ -8,11 +8,7 @@ const Dashboard = ({ getCurrentDashboard, auth, dashboard }) => {
         getCurrentDashboard();
     }, []);
             
-    return (
-        <div>
-            Dashboard
-        </div>
-    )
+    return <div>Dashboard</div>
 };
 
 Dashboard.propTypes = {

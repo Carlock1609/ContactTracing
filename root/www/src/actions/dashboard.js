@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { setAlert } from './alert';
 
 import {
     GET_DASHBOARD,
@@ -10,7 +11,6 @@ export const getCurrentDashboard = () => async dispatch => {
     try {
         const res = await axios.get('/api/dashboard');
      
-
         dispatch({
             type: GET_DASHBOARD,
             payload: res.data

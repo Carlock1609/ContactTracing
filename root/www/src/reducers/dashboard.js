@@ -2,7 +2,6 @@ import { GET_DASHBOARD, DASHBOARD_ERROR } from "../actions/types";
 
 const initialState = {
     dashboard: null,
-    dashboards: [],
     loading: true,
     error: {}
 };
@@ -10,8 +9,6 @@ const initialState = {
 export default function(state = initialState, action) {
     const { type, payload } = action;
 
-
-    
     switch(type) {
         case GET_DASHBOARD:
             return {

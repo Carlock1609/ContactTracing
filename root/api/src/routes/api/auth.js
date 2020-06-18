@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-// middleware
-const auth = require('../../middlewares/auth');
-// controllers
-const authController = require('../../controllers/authController');
 
+const auth = require('../../middlewares/auth');
+
+const authController = require('../../controllers/authController');
 
 // @route  GET api/auth
 // @desc   Test route

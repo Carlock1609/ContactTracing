@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentDashboard } from '../../actions/dashboard';
+import DashboardActions from './DashboardActions';
 
 const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
@@ -15,7 +16,11 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
             <i className="fas fa-user"></i> {' '}
             Welcome { user && user.name }
         </p>
-        { dashboard !== null ? <Fragment>Has</Fragment> : <Fragment>Has not</Fragment> }
+        { dashboard !== null ? 
+        // IF THE user is validated, show content below
+        <Fragment>
+            <DashboardActions />
+        </Fragment> : <Fragment>Has not</Fragment> }
     </Fragment>
 };
 

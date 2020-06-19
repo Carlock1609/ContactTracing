@@ -1,4 +1,9 @@
-import { GET_DASHBOARD, DASHBOARD_ERROR, CLEAR_PROFILE } from "../actions/types";
+import { 
+    GET_DASHBOARD, 
+    DASHBOARD_ERROR, 
+    CLEAR_PROFILE,
+    UPDATE_DASHBOARD
+} from "../actions/types";
 
 const initialState = {
     dashboard: null,
@@ -11,6 +16,7 @@ export default function(state = initialState, action) {
 
     switch(type) {
         case GET_DASHBOARD:
+        case UPDATE_DASHBOARD:
             return {
                 ...state,
                 dashboard: payload,

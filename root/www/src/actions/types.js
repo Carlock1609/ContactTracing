@@ -10,3 +10,4 @@ export const LOGOUT = 'LOGOUT';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
 export const GET_DASHBOARD = 'GET_DASHBOARD';
 export const DASHBOARD_ERROR = 'DASHBOARD_ERROR';
+export const UPDATE_DASHBOARD = 'UPDATE_CALENDAR';

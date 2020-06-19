@@ -8,6 +8,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
+import AddCalendar from './components/dashboard-forms/addCalendar';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // REDUX 
@@ -50,6 +51,7 @@ const App = () => {
               {/* Do this if you don't want users to be on the page unless validated */}
               {/* This is like django decorators @login_required */}
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <PrivateRoute exact path='/calendar-entry' component={AddCalendar} />
             </Switch>
           </section>
         </Fragment>

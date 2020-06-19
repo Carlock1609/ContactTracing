@@ -7,17 +7,21 @@ import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                    <Link className="nav-link" to="#">Dashboard<span className="sr-only">(current)</span></Link>
+                    <Link className="nav-link" to="#">
+                        <ii className='fas fa-user mr-1' /> {' '}
+                    Dashboard<span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="#">Journal</Link>
+                    <Link className="nav-link" to="#">Search</Link>
                 </li>
                 <li className="nav-item">
-                    <Link onClick={logout} className="nav-link" to="#">Logout</Link>
+                    <Link onClick={logout} className="nav-link" to="#"> 
+                    <i className='fas fa-sign-out-alt' /> {' '}
+                        Logout</Link>
                 </li>
-            </ul>
+            </ul> 
         </div>
     );
 

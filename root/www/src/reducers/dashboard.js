@@ -1,4 +1,4 @@
-import { GET_DASHBOARD, DASHBOARD_ERROR } from "../actions/types";
+import { GET_DASHBOARD, DASHBOARD_ERROR, CLEAR_PROFILE } from "../actions/types";
 
 const initialState = {
     dashboard: null,
@@ -20,6 +20,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 error: payload,
+                loading: false
+            }
+        case CLEAR_PROFILE:
+            return {
+                ...state,
+                dashboard: null,
                 loading: false
             }
         default:

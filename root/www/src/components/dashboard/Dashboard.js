@@ -1,14 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
+import Spinner from '../layout/Spinner';
 import { getCurrentDashboard } from '../../actions/dashboard';
 
-const Dashboard = ({ getCurrentDashboard, auth, dashboard }) => {
+const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
         getCurrentDashboard();
     }, []);
             
-    return <div>Dashboard</div>
+    return loading && dashboard === null ? <Spinner /> : <Fragment>
+        <h1 className="large text-dark">Dashboard</h1>
+        <p>
+            <i className="fas fa-user"></i> {' '}
+            Welcome { user && user.name }
+        </p>
+        { dashboard !== null ? <Fragment>Has</Fragment> : <Fragment>Has not</Fragment> }
+    </Fragment>
 };
 
 Dashboard.propTypes = {

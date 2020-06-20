@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addJournal } from '../../actions/dashboard';
  
-const Journal = ({ addJournal, history}) => {
+const AddJournal = ({ addJournal, history}) => {
     // hooks
     const [formData, setFormData] = useState({
         date: '',
@@ -94,8 +94,8 @@ const Journal = ({ addJournal, history}) => {
     )
 };
 
-addJournal.propTypes = {
+AddJournal.propTypes = {
     addJournal: PropTypes.func.isRequired
 };
 
-export default connect(null, { addJournal })(Journal);
+export default connect(null, { addJournal })(AddJournal);

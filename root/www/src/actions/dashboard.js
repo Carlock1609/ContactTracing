@@ -1,15 +1,17 @@
 import axios from 'axios';
 import { setAlert } from './alert';
+
 import {
     GET_DASHBOARD,
     DASHBOARD_ERROR,
     UPDATE_DASHBOARD
 } from './types';
 
-// Get current users calendar/journal
+// Get current users calendar/journal 
 export const getCurrentDashboard = () => async dispatch => {
     try {
         const res = await axios.get('/api/dashboard');
+
      
         dispatch({
             type: GET_DASHBOARD,
@@ -34,7 +36,7 @@ export const addCalendar = (formData, history) => async dispatch => {
         }
 
         const res = await axios.put('/api/dashboard/calendar', formData, config);
-
+        
         dispatch({
             type: UPDATE_DASHBOARD,
             payload: res.data

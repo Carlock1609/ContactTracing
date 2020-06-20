@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import DashboardActions from './DashboardActions';
+import Calendar from './Calendar';
 
 const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
@@ -17,10 +18,12 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
             Welcome { user && user.name }
         </p>
         { dashboard !== null ? 
-        // IF THE user is validated, show content below
-        <Fragment>
-            <DashboardActions />
-        </Fragment> : <Fragment>Has not</Fragment> }
+            // IF THE user is validated, show content below
+            <Fragment>
+                <DashboardActions />
+                <Calendar calendar={dashboard.calendar} />
+            </Fragment> : <Fragment>Has not</Fragment> 
+        }
     </Fragment>
 };
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addCalendar } from '../../actions/dashboard';
  
-const Calendar = ({ addCalendar, history}) => {
+const AddCalendar = ({ addCalendar, history}) => {
     // hooks
     const [formData, setFormData] = useState({
         date: '',
@@ -60,8 +60,8 @@ const Calendar = ({ addCalendar, history}) => {
     )
 };
 
-addCalendar.propTypes = {
+AddCalendar.propTypes = {
     addCalendar: PropTypes.func.isRequired
 };
 
-export default connect(null, { addCalendar })(Calendar);
+export default connect(null, { addCalendar })(AddCalendar);

@@ -6,7 +6,7 @@ import DashboardActions from './DashboardActions';
 import Calendar from './Calendar';
 import { getCurrentDashboard } from '../../actions/dashboard';
 
-const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
+const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard } }) => {
     useEffect(() => {
         getCurrentDashboard();
     }, [getCurrentDashboard]);

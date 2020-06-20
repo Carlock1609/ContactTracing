@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 
 const Dashboard = require('../models/Dashboard');
-const User = require('../models/User');
+// const User = require('../models/User');
 
 // Get users dashboard - GET
 exports.get_dashboard = async (req, res) => {

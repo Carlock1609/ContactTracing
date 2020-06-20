@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 // I want the user to be able to pick any time rather than set time.
 // import Moment from 'react-moment';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 
 export const Calendar = ({ calendar }) => {
@@ -11,11 +11,11 @@ export const Calendar = ({ calendar }) => {
         <td>{cal.date}</td>
         <td>{cal.time}</td>
         <td>{cal.choice}</td>
-        <td>{cal.notes}</td>
+        <td>{cal.notes}</td>ß
         <td><button className="btn btn-dark">Delete</button></td>
       </tr>
     ));
-  
+    // console.log(calendar)
     return (
       <Fragment>
         <h2>Calendar</h2>
@@ -39,7 +39,10 @@ Calendar.propTypes = {
   calendar: PropTypes.array.isRequired
 };
 
-export default Calendar;
+export default connect(
+  null,
+  {},
+  )(Calendar);
 
     
     

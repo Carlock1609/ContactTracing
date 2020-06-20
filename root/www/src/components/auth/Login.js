@@ -19,7 +19,7 @@ const Login = ({ login, isAuthenticated }) => {
     
     // onChange allows you to grab the formData and apply the setFormData
     // [e.target.name] keeps it dynamic so you don't have to write name: - email: - password:
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -28,7 +28,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     // Redirect if loggged in
     if(isAuthenticated) {
-        return <Redirect to="/dashboard" />
+        return <Redirect to="/dashboard" />;
     };
 
     return (
@@ -76,7 +76,7 @@ Login.propTypes = {
 };
 
 // get the auth state
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 

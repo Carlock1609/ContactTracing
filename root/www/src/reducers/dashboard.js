@@ -21,20 +21,21 @@ export default function(state = initialState, action) {
                 ...state,
                 dashboard: payload,
                 loading: false
-            }
+            };
         case DASHBOARD_ERROR:
             return {
                 ...state,
                 error: payload,
-                loading: false
-            }
+                loading: false,
+                dashboard: null
+            };
         case CLEAR_PROFILE:
             return {
                 ...state,
                 dashboard: null,
                 loading: false
-            }
+            };
         default:
-            return state
+            return state;
     }
 };

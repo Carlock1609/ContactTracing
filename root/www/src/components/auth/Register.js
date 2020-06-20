@@ -106,7 +106,7 @@ Register.protoTypes = {
 };
 
 // get the auth state
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated
 });
 

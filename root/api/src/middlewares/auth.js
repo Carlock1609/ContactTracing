@@ -91,7 +91,7 @@ exports.authorized = (req, res, next) => {
     try{
         jwt.verify(token, config.get('jwtToken'), (error, decoded) => {
             if(error) {
-                return res.status(401).json({msg: 'Token is not valid'});
+                return res.status(401).json({ msg: 'Token is not valid' });
             } else {
                 req.user = decoded.user;
                 next();

@@ -9,7 +9,7 @@ import { getCurrentDashboard } from '../../actions/dashboard';
 const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
         getCurrentDashboard();
-    }, []);
+    }, [getCurrentDashboard]);
             
     return loading && dashboard === null ? <Spinner /> : <Fragment>
         <h1 className="large text-dark">Dashboard</h1>
@@ -33,7 +33,7 @@ Dashboard.propTypes = {
     dashboard: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     auth: state.auth,
     dashboard: state.dashboard
 })

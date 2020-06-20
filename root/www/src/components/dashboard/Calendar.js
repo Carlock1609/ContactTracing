@@ -26,9 +26,7 @@ const Calendar = ({ calendar }) => {
                         <th>notes</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {calendars}
-                </tbody>
+                <tbody>{calendars}</tbody>
             </table>
         </Fragment>
     );

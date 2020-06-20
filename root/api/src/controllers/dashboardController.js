@@ -12,7 +12,7 @@ exports.get_dashboard = async (req, res) => {
             return res.status(400).json({ msg: 'There is no dashboard for this user' });
         }
 
-        res.json(dashboard)
+        res.json(dashboard);
     } catch(err) {
         console.log(err);
         return res.status(500).send('Server error');
@@ -169,7 +169,7 @@ exports.delete_calendar_entry = async (req, res) => {
 
         await dashboard.save();
 
-        res.json(dashboard)
+        res.json(dashboard);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');

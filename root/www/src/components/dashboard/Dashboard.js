@@ -1,10 +1,10 @@
 import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import Spinner from '../layout/Spinner';
-import { getCurrentDashboard } from '../../actions/dashboard';
 import DashboardActions from './DashboardActions';
+import Spinner from '../layout/Spinner';
 import Calendar from './Calendar';
+import { getCurrentDashboard } from '../../actions/dashboard';
 
 const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {

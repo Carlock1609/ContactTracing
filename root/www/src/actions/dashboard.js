@@ -25,7 +25,6 @@ export const getCurrentDashboard = () => async dispatch => {
     }
 };
 
-
 // Add Calendar entry
 export const addCalendar = (formData, history) => async dispatch => {
     try {
@@ -36,7 +35,7 @@ export const addCalendar = (formData, history) => async dispatch => {
         }
 
         const res = await axios.put('/api/dashboard/calendar', formData, config);
-        
+
         dispatch({
             type: UPDATE_DASHBOARD,
             payload: res.data

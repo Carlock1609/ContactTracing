@@ -30,17 +30,14 @@ const AddCalendar = ({ addCalendar, history}) => {
             }}>
                 <div className="row">
                     <div className="col-6">
-                        <label for="date">Date: </label>
                         <input type="date" name="date" value={date} onChange={e => onChange(e)} required />
                     </div>
                     <div className="col-6">
-                        <label for="time">Time: </label>
                         <input type="time" name="time" value={time} onChange={e => onChange(e)} required />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col">
-                        <label for="choice">Did you wear a mask: </label>
                         <select name="choice" value={choice} onChange={e => onChange(e)} required >
                             <option value="wore_mask">Stayed Home</option>
                             <option value="did_not">Deliveries</option>
@@ -50,7 +47,6 @@ const AddCalendar = ({ addCalendar, history}) => {
                 </div>
                 <div className="row mb-3">
                     <div className="col">
-                        <p className="mb-0">Notes: </p>
                         <textarea type="text" name="notes"  value={notes} onChange={e => onChange(e)} required ></textarea>
                     </div>
                 </div>

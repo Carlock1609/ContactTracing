@@ -40,27 +40,22 @@ const AddJournal = ({ addJournal, history}) => {
             >
                 <div className="row">
                     <div className="col-6">
-                        <label for="date">Date: </label>
                         <input type="date" name="date" value={date} onChange={e => onChange(e)} />
                     </div>
                     <div className="col-6">
-                        <label for="time">Time: </label>
                         <input type="time" name="time" value={time} onChange={e => onChange(e)} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <label for="activity">Activity: </label>
                         <input type="text" name="activity" value={activity} onChange={e => onChange(e)} />
                     </div>
                     <div className="col-6">
-                        <label for="location">Location: </label>
                         <input type="text" name="location" value={location} onChange={e => onChange(e)} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col">
-                        <label for="choice1">Did you wear a mask: </label>
                         <select name="choice1" value={choice1} onChange={e => onChange(e)} >
                             <option value="wore_mask">Wore Mask</option>
                             <option value="did_not">Did not wear Mask</option>
@@ -69,7 +64,6 @@ const AddJournal = ({ addJournal, history}) => {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <label for="choice2">Did others wear a mask: </label>
                         <select name="choice2" value={choice2} onChange={e => onChange(e)} >
                             <option value="wore_mask">Wore Mask</option>
                             <option value="did_not">Did not wear Mask</option>
@@ -78,13 +72,11 @@ const AddJournal = ({ addJournal, history}) => {
                 </div>
                 <div className="row mb-2">
                     <div className="col">
-                        <p className="mb-0">Contact: </p>
                         <textarea type="text" name="contact" placeholder="Any contact with COVID here..." value={contact} onChange={e => onChange(e)} ></textarea>
                     </div>
                 </div>
                 <div className="row mb-3">
                     <div className="col">
-                        <p className="mb-0">Notes: </p>
                         <textarea type="text" name="notes"  placeholder="Any notes here..." value={notes} onChange={e => onChange(e)} ></textarea>
                     </div>
                 </div>

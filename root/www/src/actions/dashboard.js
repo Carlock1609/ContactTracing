@@ -11,11 +11,10 @@ import {
 export const getCurrentDashboard = () => async dispatch => {
     try {
         const res = await axios.get('api/dashboard');
-
-     
+        // res.data RETURNS AND ARRAY NOT AN OBJECT CHECK MONGOOSE QUERYS
         dispatch({
             type: GET_DASHBOARD,
-            payload: res.data
+            payload: res.data[0]
         });
     } catch (err) {
         dispatch({

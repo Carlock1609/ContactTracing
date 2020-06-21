@@ -10,7 +10,7 @@ import {
 // Get current users calendar/journal 
 export const getCurrentDashboard = () => async dispatch => {
     try {
-        const res = await axios.get('/api/dashboard');
+        const res = await axios.get('api/dashboard');
 
      
         dispatch({
@@ -87,7 +87,7 @@ export const addJournal = (formData, history) => async dispatch => {
             payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
-}
+};
 
 
 

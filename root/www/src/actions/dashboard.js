@@ -14,7 +14,7 @@ export const getCurrentDashboard = () => async dispatch => {
         // res.data RETURNS AND ARRAY NOT AN OBJECT CHECK MONGOOSE QUERYS
         dispatch({
             type: GET_DASHBOARD,
-            payload: res.data[0]
+            payload: res.data
         });
     } catch (err) {
         dispatch({

@@ -6,7 +6,7 @@ const Dashboard = require('../models/Dashboard');
 // Get users dashboard - GET
 exports.get_dashboard = async (req, res) => {
     try {
-        const dashboard = await Dashboard.find({ user:req.user.id }).populate('user');
+        const dashboard = await Dashboard.findOne({ user:req.user.id }).populate('user');
 
         if(!dashboard) {
             return res.status(400).json({ msg: 'There is no dashboard for this user' });

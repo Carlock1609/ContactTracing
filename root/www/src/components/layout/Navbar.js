@@ -7,7 +7,7 @@ import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link className="nav-link" to="/dashboard">
                         <i className='fas fa-user mr-1' /> {' '}
@@ -27,7 +27,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
     const guestLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link className="nav-link" to="#">About</Link>
                 </li>
@@ -42,15 +42,22 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     );
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to="#">Contact Tracing</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            {/* if not loading do this */}
-            {/* USES TENARY OPERATOR - Kind of like 'OR' */}
-            { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
-        </nav>
+        <div>
+            {/* jumbotron */}
+            <div className="jumbotron jumbotron-fluid mb-0">
+                <div className="container text-center">
+                    <h1 className="display-4">CONTACT TRACING HEALTH JOURNAL</h1>
+                </div>
+            </div>
+            <nav className="navbar navbar-expand-lg">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                {/* if not loading do this */}
+                {/* USES TENARY OPERATOR - Kind of like 'OR' */}
+                { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
+            </nav>
+        </div>
     )
 };
 

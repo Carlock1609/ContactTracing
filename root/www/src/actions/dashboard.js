@@ -88,6 +88,43 @@ export const addJournal = (formData, history) => async dispatch => {
     }
 };
 
+// Delete journal entry
+export const deleteJournal = id => async dispatch => {
+    try {
+        const res = await axios.delete(`api/dashboard/journal/${id}`)
+
+        dispatch({
+            type: UPDATE_DASHBOARD,
+            payload: res.data
+        })
+
+        dispatch(setAlert('Journal entry removed', 'success'));
+    } catch(err) {
+        dispatch({
+            type: DASHBOARD_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+};
+
+// Delete calendar entry
+export const deleteCalendar = id => async dispatch => {
+    try {
+        const res = await axios.delete(`api/dashboard/calendar/${id}`)
+
+        dispatch({
+            type: UPDATE_DASHBOARD,
+            payload: res.data
+        })
+
+        dispatch(setAlert('Calendar entry removed', 'success'));
+    } catch(err) {
+        dispatch({
+            type: DASHBOARD_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+};
 
 
 

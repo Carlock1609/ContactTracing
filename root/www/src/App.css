@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+body, html {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #f25f70;
+}
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  color: #4f4f4f
+}
+.jumbotron-fluid {
+  background-color: #fff;
+}
+/* END NAVBAR */

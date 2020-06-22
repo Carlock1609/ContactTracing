@@ -7,32 +7,40 @@ import DashboardActions from './DashboardActions';
 import Calendar from './Calendar';
 import Journal from './Journal'
 import { getCurrentDashboard } from '../../actions/dashboard';
+import Spinner from '../layout/Spinner';
 
-const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard } }) => {
+const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
         getCurrentDashboard();
     }, [getCurrentDashboard]);
             
     return (
         <Fragment>
-        <h1 className="large text-primary">Dashboard</h1>
-        <p className="lead">
-          <i className="fas fa-user" /> Welcome {user && user.name}
-        </p>
-        {dashboard !== null ? (
-          <Fragment>
-            <DashboardActions />
-            <Calendar calendar={dashboard.calendar} />
-            <Journal journal={dashboard.journal} />
-  
-          </Fragment>
-        ) : (
-          <Fragment>
-            <p>You have not Registered yet</p>
-            <Link to="/register">Register</Link>
-          </Fragment>
-        )}
-      </Fragment>
+          {/* if profile is null or loading then show spinner, else load content */}
+          {dashboard === null || loading ? <Spinner /> : 
+            <Fragment>
+              <p className="lead">
+                <i className="fas fa-user" /> Welcome {user && user.name}
+              </p>
+              {dashboard !== null ? (
+                <Fragment>
+                  <DashboardActions />
+                  <div id="calenderDiv">
+                    <Calendar calendar={dashboard.calendar} />
+                    TOP OF PROFILE
+                  </div>
+                  <Journal journal={dashboard.journal} />
+        
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <p>You have not Registered yet</p>
+                  <Link to="/register">Register</Link>
+                </Fragment>
+              )}
+            </Fragment>
+          }
+       </Fragment>
     );
 };
 
@@ -45,25 +53,9 @@ Dashboard.propTypes = {
 const mapStateToProps = (state) => ({
     auth: state.auth,
     dashboard: state.dashboard
-})
+});
 
 export default connect(
     mapStateToProps,
     { getCurrentDashboard }
 )(Dashboard);
-
-
-
-// return (
-//     <Fragment>
-//         <h1 className="large text-dark">Dashboard</h1>
-//         <p>
-//             <i className="fas fa-user"></i> {' '}
-//             Welcome { user && user.name }
-//         </p>
-//         <Fragment>
-//             <DashboardActions />
-//             <Calendar calendar={dashboard.calendar} />
-//         </Fragment>
-//     </Fragment>
-// );

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addCalendar } from '../../actions/dashboard';
@@ -60,4 +61,4 @@ AddCalendar.propTypes = {
     addCalendar: PropTypes.func.isRequired
 };
 
-export default connect(null, { addCalendar })(AddCalendar);
+export default connect(null, { addCalendar })(withRouter(AddCalendar));

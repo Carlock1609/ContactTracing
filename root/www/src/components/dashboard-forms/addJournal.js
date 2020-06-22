@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addJournal } from '../../actions/dashboard';
@@ -90,4 +91,4 @@ AddJournal.propTypes = {
     addJournal: PropTypes.func.isRequired
 };
 
-export default connect(null, { addJournal })(AddJournal);
+export default connect(null, { addJournal })(withRouter(AddJournal));

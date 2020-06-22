@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 // I want the user to be able to pick any time rather than set time.
 // import Moment from 'react-moment';
 import { connect } from 'react-redux';
+import { deleteCalendar } from '../../actions/dashboard';
 
 
-export const Calendar = ({ calendar }) => {
+export const Calendar = ({ calendar, deleteCalendar }) => {
     const calendars = calendar.map(cal => (
       <tr key={cal._id}>
         <td>{cal.date}</td>
         <td>{cal.time}</td>
         <td>{cal.choice}</td>
         <td>{cal.notes}</td>
-        <td><button className="btn btn-dark">Delete</button></td>
+        <td><button onClick={() => deleteCalendar(cal._id)} className="btn btn-dark">Delete</button></td>
       </tr>
     ));
     // console.log(calendar)
@@ -35,12 +36,13 @@ export const Calendar = ({ calendar }) => {
 };
  
 Calendar.propTypes = {
-  calendar: PropTypes.array.isRequired
+  calendar: PropTypes.array.isRequired,
+  deleteCalendar: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  {},
+  { deleteCalendar },
   )(Calendar);
 
     

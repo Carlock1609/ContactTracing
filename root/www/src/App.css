@@ -37,9 +37,26 @@
   }
 }
 
-body, html {
-  font-family: 'Oswald', sans-serif;
+
+/* Tonyas CSS */
+body, button, input, select, textarea {
+  color: #404040;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+/* END TONYA's */
+
 
 /* NAVBAR */
 .navbar {
@@ -47,9 +64,13 @@ body, html {
 }
 .nav-link {
   color: #fff;
+  font-weight: 600;
+  line-height: 1.7143;
+  font-size: 14px;
 }
 .nav-link:hover {
-  color: #4f4f4f
+  color: #4f4f4f;
+  transition: ease 0.3s;
 }
 .jumbotron-fluid {
   background-color: #fff;

@@ -11,15 +11,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <li className="nav-item">
                     <Link className="nav-link" to="/dashboard">
                         <i className='fas fa-user mr-1' /> {' '}
-                    Dashboard<span className="sr-only">(current)</span></Link>
+                    DASHBOARD<span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="#">Search</Link>
+                    <Link className="nav-link" to="#">SEARCH</Link>
                 </li>
                 <li className="nav-item">
                     <Link onClick={logout} className="nav-link" to="#"> 
                     <i className='fas fa-sign-out-alt' /> {' '}
-                        Logout</Link>
+                        LOGOUT</Link>
                 </li>
             </ul> 
         </div>
@@ -29,13 +29,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link className="nav-link" to="#">About</Link>
+                    <Link className="nav-link" to="#">ABOUT</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/login">Login</Link>
+                    <Link className="nav-link" to="/login">LOGIN</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/register">Register</Link>
+                    <Link className="nav-link" to="/register">REGISTER</Link>
                 </li>
             </ul>
         </div>

@@ -48,10 +48,10 @@ const AddJournal = ({ addJournal, history}) => {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <input type="text" name="activity" value={activity} onChange={e => onChange(e)} />
+                        <input type="text" name="activity" value={activity} onChange={e => onChange(e)} placeholder="Activity here..." />
                     </div>
                     <div className="col-6">
-                        <input type="text" name="location" value={location} onChange={e => onChange(e)} />
+                        <input type="text" name="location" value={location} onChange={e => onChange(e)} placeholder="Location here..." />
                     </div>
                 </div>
                 <div className="row">

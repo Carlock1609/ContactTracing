@@ -11,7 +11,7 @@ export const Calendar = ({ calendar }) => {
         <td>{cal.date}</td>
         <td>{cal.time}</td>
         <td>{cal.choice}</td>
-        <td>{cal.notes}</td>ß
+        <td>{cal.notes}</td>
         <td><button className="btn btn-dark">Delete</button></td>
       </tr>
     ));
@@ -23,10 +23,9 @@ export const Calendar = ({ calendar }) => {
           <thead>
             <tr>
                 <th>date</th>
-                <th>notes</th>
+                <th>time</th>
                 <th>choice</th>
                 <th>notes</th>
-              <th />
             </tr>
           </thead>
           <tbody>{calendars}</tbody>

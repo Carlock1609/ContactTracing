@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import DashboardActions from './DashboardActions';
 // import Spinner from '../layout/Spinner';
 import Calendar from './Calendar';
+import Journal from './Journal'
 import { getCurrentDashboard } from '../../actions/dashboard';
 
 const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard } }) => {
@@ -22,6 +23,7 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
           <Fragment>
             <DashboardActions />
             <Calendar calendar={dashboard.calendar} />
+            <Journal journal={dashboard.journal} />
   
           </Fragment>
         ) : (

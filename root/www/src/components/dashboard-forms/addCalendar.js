@@ -47,7 +47,7 @@ const AddCalendar = ({ addCalendar, history}) => {
                 </div>
                 <div className="row mb-3">
                     <div className="col">
-                        <textarea type="text" name="notes"  value={notes} onChange={e => onChange(e)} required ></textarea>
+                        <textarea type="text" name="notes"  value={notes} onChange={e => onChange(e)} required placeholder="Notes here..." ></textarea>
                     </div>
                 </div>
                 <button className="btn btn-outline-dark" type="submit">Submit</button>

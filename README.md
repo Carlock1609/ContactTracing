@@ -3,6 +3,9 @@ This is a virtual Journal for keeping track of any contact with COVID. The websi
 
 ## Stacks used:
 - MERN: MongoDB, Express, React, Node, Javascript.
+The frontend/backend are completely seperated. 
+    - The backend is a REST api thoroughly tested with Postman
+    - The frontend is built with React
 
 ## Functionalities:
 - User can click on calendar and select an option, leave a note, and leave a Journal Entry.

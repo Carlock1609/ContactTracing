@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import DashboardActions from './DashboardActions';
-// import Spinner from '../layout/Spinner';
-import Calendar from './Calendar';
-import Journal from './Journal'
+import DashboardTop from './DashboardTop';
+import DashboardBottom from './DashboardBottom';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import Spinner from '../layout/Spinner';
 
@@ -26,11 +25,19 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
                 <Fragment>
                   <DashboardActions />
                   <div id="calenderDiv">
-                    <Calendar calendar={dashboard.calendar} />
-                    TOP OF PROFILE
+                    {dashboard.calendar.length > 0 ? (
+                      <Fragment>
+                        <DashboardTop dashboard={dashboard} />
+                      </Fragment>
+                    ) : (<h4>No Calendar entries</h4>)}
                   </div>
-                  <Journal journal={dashboard.journal} />
-        
+                  <div id="journalDiv">
+                    {dashboard.journal.length > 0 ? (
+                      <Fragment>
+                        <DashboardBottom dashboard={dashboard} />
+                      </Fragment>
+                      ) : (<h4>No Journal entries</h4>)}
+                  </div>
                 </Fragment>
               ) : (
                 <Fragment>

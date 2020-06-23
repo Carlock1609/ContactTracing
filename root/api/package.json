@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "www": "npm start --prefix www",
+    "dev": "concurrently \"npm run server\" \"npm run www\""
   },
   "author": "Jon Yates",
   "license": "MIT",

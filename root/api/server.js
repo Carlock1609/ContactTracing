@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./config/db');
+// production
+const path = require('path');
 
 // connecting mongoose
 connectDB();
@@ -18,6 +20,16 @@ const dashboardRoutes = require('./src/routes/api/dashboard');
 app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+
+// production serve static assets in production
+if(process.env.NODE_ENV === 'production') {
+    // set static folder
+    app.use(express.static('./www/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'www', 'build', 'index.html'));
+    });
+};
 
 const PORT = process.env.PORT || 8000;
 

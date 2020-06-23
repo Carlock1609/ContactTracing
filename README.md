@@ -1,5 +1,5 @@
 # Contact Tracing
-This is a virtual Journal for keeping track of any contact with COVID. 
+This is a virtual Journal for keeping track of any contact with COVID. The website this is built for is https://ustogethertrace.com/ 
 
 ## Stacks used:
 - MERN: MongoDB, Express, React, Node, Javascript.

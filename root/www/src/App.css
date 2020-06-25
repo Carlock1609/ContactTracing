@@ -76,3 +76,46 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fff;
 }
 /* END NAVBAR */
+
+/* CALENDAR */
+#calendar {
+  height: 800px;
+}
+.week-day {
+  background-color: #4f4f4f;
+  color: #fff;
+  border: 1px solid white;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/* Iphone plus and down */
+@media only screen and (max-width: 414px) {
+  #calendar {
+    height: 800px;
+  }
+  .week-day {
+    background-color: #4f4f4f;
+    color: #fff;
+    border: 1px solid white;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.4rem;
+  }
+  .week-date {
+    border: 1px solid #4f4f4f;
+    padding: 5px;
+    font-size: 1.4rem;
+  }
+  .col {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  #calendarDate {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  
+}
+
+/* END CALENDAR */

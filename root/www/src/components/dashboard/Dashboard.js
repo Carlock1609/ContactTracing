@@ -25,11 +25,9 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
                 <Fragment>
                   <DashboardActions />
                   <div id="calenderDiv">
-                    {dashboard.calendar.length > 0 ? (
-                      <Fragment>
-                        <DashboardTop dashboard={dashboard} />
-                      </Fragment>
-                    ) : (<h4>No Calendar entries</h4>)}
+                    <Fragment>
+                      <DashboardTop dashboard={dashboard} />
+                    </Fragment>
                   </div>
                   <div id="journalDiv">
                     {dashboard.journal.length > 0 ? (

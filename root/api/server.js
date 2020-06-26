@@ -16,6 +16,10 @@ const authRoutes = require('./src/routes/api/auth');
 const usersRoutes = require('./src/routes/api/users');
 const dashboardRoutes = require('./src/routes/api/dashboard');
 
+
+app.get('/', (req,res) => {
+    res.send('hello world')
+})
 // Mounting routes on app
 app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);

@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 import { deleteCalendar } from '../../actions/dashboard';
 import CalendarToast from 'tui-calendar'
 import "tui-calendar/dist/tui-calendar.css";
-import 'tui-date-picker/dist/tui-date-picker.css';
-import 'tui-time-picker/dist/tui-time-picker.css';
+// Do i need these?
+// import 'tui-date-picker/dist/tui-date-picker.css';
+// import 'tui-time-picker/dist/tui-time-picker.css';
 
 export const Calendar = ({ calendar, deleteCalendar }) => {
     // TOAST UI
-    const calendarUI = new CalendarToast('#calendar', {
+    const calendarUI = new CalendarToast('#r', {
       defaultView: 'month',
       taskView: true,
       template: {
@@ -20,7 +21,6 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
         }
       }
     })
-    console.log(calendarUI)
     // This is the calendar entry form that should eitehr pop up or you can input
     const calendarEntries = calendar.map(cal => (
       <tr key={cal._id}>
@@ -38,7 +38,7 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
         {/* <div id="calendar"></div> */}
         {/* <div id="calendar"> */}
           {/* {weekdayshortname} */}
-          {/* {calendarUI} */}
+          {/* {calendarUI.container} */}
           {/* <div id="calendar"></div> */}
           {/* {calendarContainer} */}
         {/* </div> */}

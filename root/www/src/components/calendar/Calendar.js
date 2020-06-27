@@ -21,14 +21,6 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
     return (
       <Fragment>
         <h2>Calendar</h2>
-        <CalendarUI />
-        {/* <div id="calendar"></div> */}
-        {/* <div id="calendar"> */}
-          {/* {weekdayshortname} */}
-          {/* {calendarUI.container} */}
-          {/* <div id="calendar"></div> */}
-          {/* {calendarContainer} */}
-        {/* </div> */}
         <table>
           <thead>
             <tr>
@@ -40,6 +32,15 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
           </thead>
           <tbody>{calendarEntries}</tbody>
         </table>
+        
+        <CalendarUI />
+        {/* <div id="calendar"></div> */}
+        {/* <div id="calendar"> */}
+          {/* {weekdayshortname} */}
+          {/* {calendarUI.container} */}
+          {/* <div id="calendar"></div> */}
+          {/* {calendarContainer} */}
+        {/* </div> */}
 
       </Fragment>
     );

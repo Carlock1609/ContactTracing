@@ -34,7 +34,14 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
                       <Fragment>
                         <DashboardBottom dashboard={dashboard} />
                       </Fragment>
-                      ) : (<h4>No Journal entries</h4>)}
+                      ) : (
+                        <div>
+                          <Fragment>
+                            <DashboardBottom dashboard={dashboard} />
+                          </Fragment>
+                          <h4>No Journal entries</h4>
+                        </div>
+                      )}
                   </div>
                 </Fragment>
               ) : (

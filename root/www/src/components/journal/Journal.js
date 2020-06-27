@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteJournal } from '../../actions/dashboard';
+import AddJournal from '../dashboard-forms/addJournal';
 
 export const Journal = ({ journal, deleteJournal }) => {
     const journals = journal.map(jour => (
@@ -22,6 +23,7 @@ export const Journal = ({ journal, deleteJournal }) => {
     // console.log(calendar)
     return (
       <Fragment>
+        <AddJournal />
         <h2>Journal</h2>
         <table>
           <thead>

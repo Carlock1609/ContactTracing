@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import DashboardActions from './DashboardActions';
+// import DashboardActions from './DashboardActions';
 import DashboardTop from './DashboardTop';
 import DashboardBottom from './DashboardBottom';
 import { getCurrentDashboard } from '../../actions/dashboard';
@@ -23,12 +23,17 @@ const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard
               </p>
               {dashboard !== null ? (
                 <Fragment>
-                  <DashboardActions />
+                  {/* <DashboardActions /> */}
                   <div id="calenderDiv">
                     <Fragment>
                       <DashboardTop dashboard={dashboard} />
                     </Fragment>
                   </div>
+                  {/* THE SPLIT BETWEEN CALENDER AND JOURNAL */}
+                  <br/>
+                  <hr/>
+                  <br/>
+                  {/* END SPLIT */}
                   <div id="journalDiv">
                     {dashboard.journal.length > 0 ? (
                       <Fragment>

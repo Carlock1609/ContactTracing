@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // import moment from 'moment';
 import { connect } from 'react-redux';
 import CalendarUI from './CalendarUI';
+import AddCalendar from '../dashboard-forms/addCalendar'
 import { deleteCalendar } from '../../actions/dashboard';
 
 export const Calendar = ({ calendar, deleteCalendar }) => {
@@ -21,6 +22,7 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
     return (
       <Fragment>
         <h2>Calendar</h2>
+        {/* <AddCalendar /> */}
         <table>
           <thead>
             <tr>
@@ -32,7 +34,7 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
           </thead>
           <tbody>{calendarEntries}</tbody>
         </table>
-        
+
         <CalendarUI />
         {/* <div id="calendar"></div> */}
         {/* <div id="calendar"> */}

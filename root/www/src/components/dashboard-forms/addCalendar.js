@@ -24,7 +24,6 @@ const AddCalendar = ({ addCalendar, history}) => {
 
     return (
         <Fragment>
-            <h1>Add Calendar entry</h1>
             <form onSubmit={e => {
                 e.preventDefault();
                 addCalendar(formData, history);

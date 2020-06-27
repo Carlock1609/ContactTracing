@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Calendar from './Calendar';
+import Calendar from '../calendar/Calendar';
 
 const DashboardTop = ({ dashboard: { calendar } }) => {
     return (

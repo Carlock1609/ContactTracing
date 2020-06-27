@@ -3,24 +3,10 @@ import PropTypes from 'prop-types';
 // I want the user to be able to pick any time rather than set time.
 // import moment from 'moment';
 import { connect } from 'react-redux';
+import CalendarUI from './CalendarUI';
 import { deleteCalendar } from '../../actions/dashboard';
-import CalendarToast from 'tui-calendar'
-import "tui-calendar/dist/tui-calendar.css";
-// Do i need these?
-// import 'tui-date-picker/dist/tui-date-picker.css';
-// import 'tui-time-picker/dist/tui-time-picker.css';
 
 export const Calendar = ({ calendar, deleteCalendar }) => {
-    // TOAST UI
-    const calendarUI = new CalendarToast('#r', {
-      defaultView: 'month',
-      taskView: true,
-      template: {
-        monthDayname: function(dayname) {
-          return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
-        }
-      }
-    })
     // This is the calendar entry form that should eitehr pop up or you can input
     const calendarEntries = calendar.map(cal => (
       <tr key={cal._id}>
@@ -35,6 +21,7 @@ export const Calendar = ({ calendar, deleteCalendar }) => {
     return (
       <Fragment>
         <h2>Calendar</h2>
+        <CalendarUI />
         {/* <div id="calendar"></div> */}
         {/* <div id="calendar"> */}
           {/* {weekdayshortname} */}

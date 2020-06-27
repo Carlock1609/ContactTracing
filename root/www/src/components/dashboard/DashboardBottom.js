@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Journal from './Journal';
+import Journal from '../journal/Journal';
 
 const DashboardBottom = ({ dashboard: { journal } }) => {
     return (

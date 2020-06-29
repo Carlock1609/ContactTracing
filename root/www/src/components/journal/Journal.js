@@ -8,24 +8,43 @@ import AddJournal from '../dashboard-forms/addJournal';
 
 export const Journal = ({ journal, deleteJournal }) => {
     const journals = journal.map(jour => (
-      <tr key={jour._id}>
-        <td>{jour.date}</td>
-        <td>{jour.time}</td>
-        <td>{jour.activity}</td>
-        <td>{jour.location}</td>
-        <td>{jour.choice1}</td>
-        <td>{jour.choice2}</td>
-        <td>{jour.contact}</td>
-        <td>{jour.notes}</td>
-        <td><button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button></td>
-      </tr>
+      <div key={jour._id}>
+        <div>{jour.date}</div>
+        <div>{jour.time}</div> 
+        <div>{jour.activity}</div>
+        <div>{jour.location}</div>
+        <div>{jour.choice1}</div>
+        <div>{jour.choice2}</div>
+        <div>{jour.contact}</div>
+        <div>{jour.notes}</div>
+        <div><button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button></div>
+      </div>
     ));
+
+    // const journals = journal.map(jour => (
+    //   <tr key={jour._id}>
+    //     <td>{jour.date}</td>
+    //     <td>{jour.time}</td>
+    //     <td>{jour.activity}</td>
+    //     <td>{jour.location}</td>
+    //     <td>{jour.choice1}</td>
+    //     <td>{jour.choice2}</td>
+    //     <td>{jour.contact}</td>
+    //     <td>{jour.notes}</td>
+    //     <td><button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button></td>
+    //   </tr>
+    // ));
     // console.log(calendar)
     return (
       <Fragment>
+        <div className="text-center">
+          <h2>Journal Entry</h2>
+        </div>
         <AddJournal />
-        <h2>Journal</h2>
-        <table>
+        {/* <div className="container container-fluid"> */}
+          {journals}
+        {/* </div> */}
+        {/* <table>
           <thead>
             <tr>
                 <th>date</th>
@@ -39,7 +58,7 @@ export const Journal = ({ journal, deleteJournal }) => {
             </tr>
           </thead>
           <tbody>{journals}</tbody>
-        </table>
+        </table> */}
       </Fragment>
     );
 };

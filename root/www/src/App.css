@@ -78,6 +78,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* END NAVBAR */
 
+/* JOURNAL */
+#blocked {
+  display: flex;
+  flex-wrap: wrap;
+}
+#blocked div {
+  width: 100%;
+}
+/* END JOURNAL */
+
+
+
+
+
 /* CALENDAR */
 .react-calendar {
   width: 100%;
@@ -200,6 +214,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Iphone plus and down */
 @media only screen and (max-width: 414px) {
+  /* JOURNAL */
+    #journal_form input, select, textarea {
+      width: 100%;
+    }
+  /* END JOURNAL */
+
+  /* CALENDAR */
   .react-calendar {
     width: 100%;
     max-width: 100%;
@@ -318,6 +339,8 @@ h1, h2, h3, h4, h5, h6 {
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
   }
+  /* END CALENDAR */
 }
 
-/* END CALENDAR */
+
+

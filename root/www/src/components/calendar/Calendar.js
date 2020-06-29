@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import moment from 'moment';
 import { connect } from 'react-redux';
 import CalendarUI from './CalendarUI';
-import AddCalendar from '../dashboard-forms/addCalendar'
+// import AddCalendar from '../dashboard-forms/addCalendar'
 import { deleteCalendar } from '../../actions/dashboard';
 
 export const Calendar = ({ calendar, deleteCalendar }) => {

@@ -38,8 +38,9 @@ const AddJournal = ({ addJournal, history}) => {
                 addJournal(formData, history);
                 }}
             >
-                <div id="journal_form" className="text-center">
+                <div id="journal_form">
                     <div className="row">
+                    <p id="form_holder">Date/Time: </p>
                         <div className="col-md-6 col-sm-12 mb-1">
                             <input type="date" name="date" value={date} onChange={e => onChange(e)} />
                         </div>
@@ -48,6 +49,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
+                    <p id="form_holder">Activity/Location: </p>
                         <div className="col-lg-6 col-md-6 mb-1">
                             <input type="text" name="activity" value={activity} onChange={e => onChange(e)} placeholder="Activity here..." />
                         </div>
@@ -56,6 +58,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
+                        <p id="form_holder">Did you wear a mask: </p>
                         <div className="col-12 mb-1">
                             <select name="choice1" value={choice1} onChange={e => onChange(e)} >
                                 <option value="wore_mask">Wore Mask</option>
@@ -64,6 +67,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
+                    <p id="form_holder">Did others wear a mask: </p>
                         <div className="col-12 mb-1">
                             <select name="choice2" value={choice2} onChange={e => onChange(e)} >
                                 <option value="wore_mask">Wore Mask</option>
@@ -81,7 +85,9 @@ const AddJournal = ({ addJournal, history}) => {
                             <textarea type="text" name="notes"  placeholder="Any notes here..." value={notes} onChange={e => onChange(e)} ></textarea>
                         </div>
                     </div>
-                    <button className="btn btn-outline-dark" type="submit">Submit</button>
+                    <div className="text-center">
+                        <button className="btn btn-outline-dark" type="submit">Submit</button>
+                    </div>
                 </div>
             </form>
         </Fragment>

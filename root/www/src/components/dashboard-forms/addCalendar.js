@@ -53,7 +53,7 @@ const AddCalendar = ({ addCalendar, history}) => {
                 <button className="btn btn-outline-dark" type="submit">Submit</button>
             </form>
         </Fragment>
-    )
+    );
 };
 
 AddCalendar.propTypes = {

@@ -5,7 +5,6 @@ import 'react-calendar/dist/Calendar.css';
 
 const CalendarUI = () => {
 
-    
     return (
         <div>
             <CalendarPack />

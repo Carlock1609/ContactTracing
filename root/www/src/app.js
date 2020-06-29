@@ -9,7 +9,8 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import AddCalendar from './components/dashboard-forms/addCalendar';
-import AddJournal from './components/dashboard-forms/addJournal'
+// import AddJournal from './components/dashboard-forms/addJournal';
+import JournalEntries from './components/journal/JournalEntries';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // REDUX 
@@ -53,7 +54,8 @@ const App = () => {
               {/* This is like django decorators @login_required */}
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
               <PrivateRoute exact path='/calendar-entry' component={AddCalendar} />
-              <PrivateRoute exact path='/journal-entry' component={AddJournal} />
+              {/* <PrivateRoute exact path='/journal-entry' component={AddJournal} /> */}
+              {/* <PrivateRoute exact path='/journal-entries' component={JournalEntries} /> */}
             </Switch>
           </section>
         </Fragment>

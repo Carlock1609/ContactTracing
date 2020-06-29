@@ -8,7 +8,7 @@ import DashboardBottom from './DashboardBottom';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import Spinner from '../layout/Spinner';
 
-const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
+export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
         getCurrentDashboard();
     }, [getCurrentDashboard]);

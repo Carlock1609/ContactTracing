@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteJournal } from '../../actions/dashboard';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 
 
 export const JournalEntries = ({ journal, deleteJournal }) => {
@@ -33,10 +33,18 @@ export const JournalEntries = ({ journal, deleteJournal }) => {
  
 JournalEntries.propTypes = {
   journal: PropTypes.array.isRequired,
-  deleteJournal: PropTypes.func.isRequired
+  deleteJournal: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  dashboard: PropTypes.object.isRequired
 };
 
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    dashboard: state.dashboard
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { deleteJournal },
-  )(withRouter(JournalEntries));
+  )(JournalEntries);
+

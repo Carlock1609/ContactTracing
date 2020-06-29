@@ -54,7 +54,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             </div>
             <nav className="navbar navbar-expand-sm">
                 <button className="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 {/* if not loading do this */}
                 {/* USES TENARY OPERATOR - Kind of like 'OR' */}

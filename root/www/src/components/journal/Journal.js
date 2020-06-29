@@ -42,6 +42,7 @@ export const Journal = ({ journal, deleteJournal }) => {
         </div>
         <AddJournal />
         {/* <div className="container container-fluid"> */}
+        <h1>ENTRIES</h1>
           {journals}
         {/* </div> */}
         {/* <table>

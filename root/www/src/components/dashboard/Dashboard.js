@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import DashboardActions from './DashboardActions';
 import DashboardTop from './DashboardTop';
 import DashboardBottom from './DashboardBottom';
+// import JournalEntries from '../journal/JournalEntries';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import Spinner from '../layout/Spinner';
 
@@ -12,9 +13,14 @@ export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { da
     useEffect(() => {
         getCurrentDashboard();
     }, [getCurrentDashboard]);
+
             
     return (
+        // <Fragment>
+        //   <JournalEntries dashboard={dashboard} />
+        // </Fragment>
         <Fragment>
+          {/* TESTING JOURNALENTRY COMPONENT */}
           {/* if profile is null or loading then show spinner, else load content */}
           {dashboard === null || loading ? <Spinner /> : 
             <Fragment>

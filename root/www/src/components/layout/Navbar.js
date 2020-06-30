@@ -14,7 +14,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     DASHBOARD<span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/journal-entries">JOURNAL</Link>
+                    <Link className="nav-link" to="/journal">JOURNAL</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="#">SEARCH</Link>

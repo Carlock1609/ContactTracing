@@ -9,8 +9,7 @@ import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 import AddCalendar from './components/dashboard-forms/addCalendar';
-// import AddJournal from './components/dashboard-forms/addJournal';
-import JournalEntries from './components/journal/JournalEntries';
+import Journal from './components/journal/Journal';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // REDUX 
@@ -55,7 +54,7 @@ const App = () => {
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
               <PrivateRoute exact path='/calendar-entry' component={AddCalendar} />
               {/* <PrivateRoute exact path='/journal-entry' component={AddJournal} /> */}
-              {/* <PrivateRoute exact path='/journal-entries' component={JournalEntries} /> */}
+              <PrivateRoute exact path='/journal' component={Journal} />
             </Switch>
           </section>
         </Fragment>

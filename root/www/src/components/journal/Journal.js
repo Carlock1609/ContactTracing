@@ -1,47 +1,48 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // I want the user to be able to pick any time rather than set time.
 // import Moment from 'react-moment';
 import { connect } from 'react-redux';
-import { deleteJournal } from '../../actions/dashboard';
-import AddJournal from '../dashboard-forms/addJournal';
+// import { deleteJournal } from '../../actions/dashboard';
+// import AddJournal from '../dashboard-forms/addJournal';
+import { getCurrentDashboard } from '../../actions/dashboard';
+import JournalEntries from './JournalEntries';
+      
 
-export const Journal = ({ journal, deleteJournal }) => {
-    const journalForm = journal.map(jour => (
-      <div key={jour._id}>
-        <div>{jour.date}</div>
-        <div>{jour.time}</div> 
-        <div>{jour.activity}</div>
-        <div>{jour.location}</div>
-        <div>{jour.choice1}</div>
-        <div>{jour.choice2}</div>
-        <div>{jour.contact}</div>
-        <div>{jour.notes}</div>
-        <div><button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button></div>
-      </div>
-    ));
+
+// export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
+//   useEffect(() => {
+//       getCurrentDashboard();
+//   }, [getCurrentDashboard]);
+
+export const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => {
+    useEffect(() => {
+      getCurrentDashboard();
+    }, [getCurrentDashboard]);
     return (
       <Fragment>
-        <div className="text-center">
-          <h2>Journal Entry</h2>
-        </div>
-        <AddJournal />
-
-        <h1>ENTRIES</h1>
-        {journalForm}
+        <JournalEntries dashboard={dashboard} />
       </Fragment>
-    );
+    ); 
 };
  
 Journal.propTypes = {
-  journal: PropTypes.array.isRequired,
-  deleteJournal: PropTypes.func.isRequired
+  getCurrentDashboard: PropTypes.func.isRequired,
+  // auth: PropTypes.object.isRequired,
+  dashboard: PropTypes.object.isRequired
 };
 
+const mapStateToProps = (state) => ({
+    // auth: state.auth,
+    dashboard: state.dashboard,
+});
+
+
 export default connect(
-  null,
-  { deleteJournal },
+  mapStateToProps,
+  { getCurrentDashboard },
   )(Journal);
+
 
     
     

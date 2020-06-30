@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 // import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteJournal } from '../../actions/dashboard';
-// import { withRouter } from 'react-router-dom';
-
-
+// import AddJournal from '../dashboard-forms/addJournal';
+      
 export const JournalEntries = ({ journal, deleteJournal }) => {
+    console.log(journal)
     const journalForm = journal.map(jour => (
       <div key={jour._id}>
         <div>{jour.date}</div>
@@ -24,8 +24,11 @@ export const JournalEntries = ({ journal, deleteJournal }) => {
     return (
       <Fragment>
         <div className="text-center">
-          <h2>Journal ENTRIES</h2>
+          <h2>Journal Entry</h2>
         </div>
+        {/* <AddJournal /> */}
+
+        <h1>ENTRIES</h1>
         {journalForm}
       </Fragment>
     );
@@ -33,18 +36,12 @@ export const JournalEntries = ({ journal, deleteJournal }) => {
  
 JournalEntries.propTypes = {
   journal: PropTypes.array.isRequired,
-  deleteJournal: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  dashboard: PropTypes.object.isRequired
+  deleteJournal: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-    dashboard: state.dashboard
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   { deleteJournal },
   )(JournalEntries);
 
+    

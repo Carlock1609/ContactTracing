@@ -7,18 +7,13 @@ import { connect } from 'react-redux';
 // import AddJournal from '../dashboard-forms/addJournal';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import JournalEntries from './JournalEntries';
-      
 
-
-// export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
-//   useEffect(() => {
-//       getCurrentDashboard();
-//   }, [getCurrentDashboard]);
 
 export const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
       getCurrentDashboard();
     }, [getCurrentDashboard]);
+
     return (
       <Fragment>
         <JournalEntries dashboard={dashboard} />
@@ -43,9 +38,6 @@ export default connect(
   { getCurrentDashboard },
   )(Journal);
 
-
-    
-    
     
     // const Calendar = ({ calendar }) => {
     //     const calendars = calendar.map(cal => (

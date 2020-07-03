@@ -10,13 +10,17 @@ const Landing = ({ isAuthenticated }) => {
 
 
     return (
-        <section className="container-fluid">
-            <div className="buttons">
-              <Link to="/register" className="btn btn-outline-dark">Sign Up</Link>
-              <Link to="/login" className="btn btn-outline-dark">Login</Link>
+        <section className="container-fluid text-center">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">WELCOME</h2>
+                        <Link to="/register" id="landing_btn" className="btn btn-outline-dark">Sign Up</Link>
+                        <Link to="/login" id="landing_btn" className="btn btn-outline-dark">Login</Link>
+                </div>
             </div>
         </section>
     )
+            
 };
 
 Landing.propTypes = {

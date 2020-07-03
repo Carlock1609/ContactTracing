@@ -1,42 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* THINK ABOUT SEPERATING AND IMPORTING SPECIFIC CSS TO THE COMPONENT FOR FAST LOADS */
 
 /* Tonyas CSS */
 body, button, input, select, textarea {
@@ -57,6 +19,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* END TONYA's */
 
+/* LANDING PAGE - LOGIN/REGISTER */
+#landing_btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.card {
+  border: 0;
+  margin-top: 20px;
+}
+
+
+/* END LANDING */
+
+/* ABOUT PAGE */
+#about_body {
+  font-size: large;
+}
+/* END ABOUT */
 
 /* NAVBAR */
 .navbar {
@@ -87,9 +68,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 /* END JOURNAL */
-
-
-
 
 
 /* CALENDAR */
@@ -214,6 +192,45 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Iphone plus and down */
 @media only screen and (max-width: 414px) {
+  /* Tonyas CSS */
+  body, button, input, select, textarea {
+    color: #404040;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  /* END TONYA's */
+  
+  /* LANDING PAGE - LOGIN/REGISTER */
+  #landing_btn {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .card {
+    border: 0;
+    margin-top: 20px;
+  }
+  
+  
+  /* END LANDING */
+  
+  /* ABOUT PAGE */
+  #about_body {
+    font-size: large;
+  }
+  /* END ABOUT */
+
   /* JOURNAL */
     #journal_form input, select, textarea {
       width: 100%;

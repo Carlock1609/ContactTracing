@@ -7,7 +7,7 @@ import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav mx-auto">
                 <li className="nav-item">
                     <Link className="nav-link" to="/dashboard">
                         <i className='fas fa-user mr-1' /> {' '}
@@ -30,9 +30,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
     const guestLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav mx-auto">
                 <li className="nav-item">
-                    <Link className="nav-link" to="#">ABOUT</Link>
+                    <Link className="nav-link" to="/about">ABOUT</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">LOGIN</Link>

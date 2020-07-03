@@ -4,6 +4,7 @@ const About = (props) => {
 
     return (
         <div>
+            <h3 className="mt-5">ABOUT</h3>
             <div className="container mt-5">
                 <em id="about_body">Thank you for visiting us! 
                     <br/><br/>
@@ -23,6 +24,7 @@ We hope you find this tool useful and that you stay safe and healthy!</em>
             <div className="ml-5 mt-3">
                 <img src="https://www.ustogethertrace.com/wp-content/uploads/2020/06/Picture1-300x84.png" alt="US Together Logo"/>
             </div>
+            <hr/>
         </div>
     );
 };

@@ -31,15 +31,19 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const guestLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto">
+                <br/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/about">ABOUT</Link>
                 </li>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">LOGIN</Link>
                 </li>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/register">REGISTER</Link>
                 </li>
+                <br/>
             </ul>
         </div>
     );
@@ -53,8 +57,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 </div>
             </div>
             <nav className="navbar navbar-expand-sm">
-                <button className="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler navbar-light mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
+                    <span id="toggle_icon">MENU</span>
                 </button>
                 {/* if not loading do this */}
                 {/* USES TENARY OPERATOR - Kind of like 'OR' */}

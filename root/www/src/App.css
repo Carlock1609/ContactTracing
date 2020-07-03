@@ -242,6 +242,46 @@ h1, h2, h3, h4, h5, h6 {
     }
   /* END JOURNAL */
 
+  /* NAVBAR */
+
+  /* this only needs to be in phonesize */
+#navHr {
+  color: pink;
+  height: 1px;
+  background: pink;
+  /* width: 100px; */
+  width: 100%;
+}
+
+.navbar {
+  background-color: #f25f70;
+}
+.nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.7143;
+  font-size: 14px;
+}
+.nav-link:hover {
+  color: #4f4f4f;
+  transition: ease 0.3s;
+}
+.jumbotron-fluid {
+  background-color: #fff;
+}
+
+#toggle_icon {
+  color: #fff;
+}
+.navbar-toggler-icon {
+  height: 1.0rem;
+  width: 1.0rem;
+  margin-right: 5px;
+}
+/* END NAVBAR */
+
   /* CALENDAR */
   .react-calendar {
     width: 100%;

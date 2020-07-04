@@ -21,6 +21,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #f25f70;
 }
+a:hover {
+  color: #404040;
+}
 .btn-outline-dark {
   border-color: #404040;
 }
@@ -79,14 +82,16 @@ a {
 /* END NAVBAR */
 
 /* JOURNAL */
-#blocked {
-  display: flex;
-  flex-wrap: wrap;
-}
-#blocked div {
+#journal_form input, select, textarea {
   width: 100%;
 }
+#form_holder {
+  font-size: .90rem;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
 /* END JOURNAL */
+
 
 
 /* CALENDAR */
@@ -208,7 +213,7 @@ a {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
-
+/* END CALENDAR */
 /* IPHONE PLUS */
 @media only screen and (max-width: 414px) {
   /* Tonyas CSS */
@@ -230,6 +235,9 @@ a {
   }
   a {
     color: #f25f70;
+  }
+  a:hover {
+    color: #404040;
   }
   .btn-outline-dark {
     border-color: #404040;

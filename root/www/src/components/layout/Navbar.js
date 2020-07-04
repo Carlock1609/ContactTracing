@@ -8,7 +8,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto">
-                <li className="nav-item">
+                <li className="nav-item mt-1">
                     <Link className="nav-link" to="/dashboard">
                         <i className='fas fa-user mr-1' /> {' '}
                     DASHBOARD<span className="sr-only">(current)</span></Link>
@@ -26,8 +26,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <span id="nav_dot">-</span>
                 <hr id="navHr"/>
                 <li className="nav-item">
+                    <Link className="nav-link" to="/resources">RESOURCES</Link>
+                </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/contact-us">CONTACT US</Link>
+                </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
+                <li className="nav-item mb-2">
                     <Link onClick={logout} className="nav-link" to="#"> 
-                    <i className='fas fa-sign-out-alt' /> {' '}
+                    {/* <i className='fas fa-sign-out-alt' /> {' '} */}
                         LOGOUT</Link>
                 </li>
             </ul> 
@@ -45,6 +55,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <span id="nav_dot">-</span>
                 <li className="nav-item">
                     <Link className="nav-link" to="/resources">RESOURCES</Link>
+                </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/contact-us">CONTACT US</Link>
                 </li>
                 <span id="nav_dot">-</span>
                 <hr id="navHr"/>

@@ -40,7 +40,7 @@ const AddJournal = ({ addJournal, history}) => {
             >
                 <div id="journal_form">
                     <div className="row">
-                    <p id="form_holder">Date/Time: </p>
+                    <h5 id="form_holder">Date/Time: </h5>
                         <div className="col-md-6 col-sm-12 mb-1">
                             <input type="date" name="date" value={date} onChange={e => onChange(e)} />
                         </div>
@@ -49,7 +49,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
-                    <p id="form_holder">Activity/Location: </p>
+                    <h5 id="form_holder">Activity/Location: </h5>
                         <div className="col-lg-6 col-md-6 mb-1">
                             <input type="text" name="activity" value={activity} onChange={e => onChange(e)} placeholder="Activity here..." />
                         </div>
@@ -58,7 +58,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
-                        <p id="form_holder">Did you wear a mask: </p>
+                        <h5 id="form_holder">Did you wear a mask: </h5>
                         <div className="col-12 mb-1">
                             <select name="choice1" value={choice1} onChange={e => onChange(e)} >
                                 <option value="wore_mask">Wore Mask</option>
@@ -67,7 +67,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                     <div className="row">
-                    <p id="form_holder">Did others wear a mask: </p>
+                    <h5 id="form_holder">Did others wear a mask: </h5>
                         <div className="col-12 mb-1">
                             <select name="choice2" value={choice2} onChange={e => onChange(e)} >
                                 <option value="wore_mask">Wore Mask</option>

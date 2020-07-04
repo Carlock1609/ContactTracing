@@ -1,4 +1,5 @@
 /* THINK ABOUT SEPERATING AND IMPORTING SPECIFIC CSS TO THE COMPONENT FOR FAST LOADS */
+/* GOING TO AHVE TO MAKE MEDIA QUERIES FOR: IPHONE PLUS AND UP, IPHONE PLUS, IPHONE AND DOWN */
 
 /* Tonyas CSS */
 body, button, input, select, textarea {
@@ -16,6 +17,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+a {
+  color: #f25f70;
+}
+.btn-outline-dark {
+  border-color: #404040;
+}
+.btn-outline-dark:hover {
+  background-color: #404040;
 }
 /* END TONYA's */
 
@@ -39,6 +49,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* END ABOUT */
 
+/* RESOURCES PAGE */
+/* #resources_div {
+  left: 500px;
+
+} */
+/* END RESOURCES */
+
 /* NAVBAR */
 .navbar {
   background-color: #f25f70;
@@ -56,7 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 .jumbotron-fluid {
   background-color: #fff;
 }
-
+#nav_dot {
+  color: #fff;
+}
 /* END NAVBAR */
 
 /* JOURNAL */
@@ -190,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #e6e6e6;
 }
 
-/* Iphone plus and down */
+/* IPHONE PLUS */
 @media only screen and (max-width: 414px) {
   /* Tonyas CSS */
   body, button, input, select, textarea {
@@ -209,7 +228,22 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 2px;
     text-transform: uppercase;
   }
+  a {
+    color: #f25f70;
+  }
+  .btn-outline-dark {
+    border-color: #404040;
+  }
+  .btn-outline-dark:hover {
+    color: #404040;
+  }
   /* END TONYA's */
+
+  /* HEADER */
+#header_div {
+  font-size: 3.0rem;
+}
+  /* END HEADER */
   
   /* LANDING PAGE - LOGIN/REGISTER */
   #landing_btn {
@@ -274,6 +308,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #toggle_icon {
   color: #fff;
+}
+#nav_dot {
+  color: #fff;
+  display: none;
 }
 .navbar-toggler-icon {
   height: 1.0rem;

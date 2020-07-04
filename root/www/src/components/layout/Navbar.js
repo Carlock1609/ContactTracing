@@ -13,12 +13,18 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                         <i className='fas fa-user mr-1' /> {' '}
                     DASHBOARD<span className="sr-only">(current)</span></Link>
                 </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/journal">JOURNAL</Link>
                 </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="#">SEARCH</Link>
                 </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link onClick={logout} className="nav-link" to="#"> 
                     <i className='fas fa-sign-out-alt' /> {' '}
@@ -36,9 +42,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                     <Link className="nav-link" to="/about">ABOUT</Link>
                 </li>
                 <hr id="navHr"/>
+                <span id="nav_dot">-</span>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/resources">RESOURCES</Link>
+                </li>
+                <span id="nav_dot">-</span>
+                <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">LOGIN</Link>
                 </li>
+                <span id="nav_dot">-</span>
                 <hr id="navHr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/register">REGISTER</Link>
@@ -53,7 +66,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             {/* jumbotron */}
             <div className="jumbotron jumbotron-fluid mb-0">
                 <div className="container text-center">
-                    <h1 className="display-4">CONTACT TRACING HEALTH JOURNAL</h1>
+                    <h1 id="header_div" className="display-4">CONTACT TRACING HEALTH JOURNAL</h1>
                 </div>
             </div>
             <nav className="navbar navbar-expand-sm">

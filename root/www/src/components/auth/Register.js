@@ -83,7 +83,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                                     name="password2"
                                     minLength="6"
                                     value={password2}
-                                    placeholder="Validate Password here"
+                                    placeholder="Password again..."
                                     onChange={e => onChange(e)}
                                 />
                             </div>
@@ -91,7 +91,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         </form>
                     </div>
                     <p className="my-1">
-                        Already have an account? <Link to="/login">Sign in</Link>
+                        Already have an account? <Link to="/login">Sign In</Link>
                     </p>
                 </div>
             </section>

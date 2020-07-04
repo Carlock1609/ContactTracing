@@ -11,6 +11,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import AddCalendar from './components/dashboard-forms/addCalendar';
 import Journal from './components/journal/Journal';
 import About from './components/layout/About';
+import Resources from './components/layout/Resources';
 import PrivateRoute from './components/routing/PrivateRoute';
 
 // REDUX 
@@ -50,6 +51,7 @@ const App = () => {
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
               <Route exact path='/about' component={About} />
+              <Route exact path='/resources' component={Resources} />
               {/* Private route is a seperate component that you can call to hide components unless validated */}
               {/* Do this if you don't want users to be on the page unless validated */}
               {/* This is like django decorators @login_required */}

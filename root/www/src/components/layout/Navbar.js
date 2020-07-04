@@ -8,34 +8,34 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     const authLinks = (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto">
-                <li className="nav-item mt-1">
+                <li className="nav-item">
                     <Link className="nav-link" to="/dashboard">
                         <i className='fas fa-user mr-1' /> {' '}
                     DASHBOARD<span className="sr-only">(current)</span></Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/journal">JOURNAL</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="#">SEARCH</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/resources">RESOURCES</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/contact-us">CONTACT US</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
-                <li className="nav-item mb-2">
+                <hr id="nav_hr"/>
+                <li className="nav-item mb-0">
                     <Link onClick={logout} className="nav-link" to="#"> 
                     {/* <i className='fas fa-sign-out-alt' /> {' '} */}
                         LOGOUT</Link>
@@ -51,23 +51,23 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
                 <li className="nav-item">
                     <Link className="nav-link" to="/about">ABOUT</Link>
                 </li>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <span id="nav_dot">-</span>
                 <li className="nav-item">
                     <Link className="nav-link" to="/resources">RESOURCES</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/contact-us">CONTACT US</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/login">LOGIN</Link>
                 </li>
                 <span id="nav_dot">-</span>
-                <hr id="navHr"/>
+                <hr id="nav_hr"/>
                 <li className="nav-item">
                     <Link className="nav-link" to="/register">REGISTER</Link>
                 </li>

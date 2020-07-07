@@ -93,6 +93,7 @@ const AddJournal = ({ addJournal, history}) => {
                         </div>
                     </div>
                 </form>
+                <br/>
             </div>
         </Fragment>
     )

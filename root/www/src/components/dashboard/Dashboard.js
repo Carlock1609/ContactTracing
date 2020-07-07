@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import DashboardActions from './DashboardActions';
-import DashboardTop from './DashboardTop';
-import DashboardBottom from './DashboardBottom';
+import AddJournal from '../dashboard-forms/addJournal';
+import Calendar from '../calendar/Calendar';
 // import JournalEntries from '../journal/JournalEntries';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import Spinner from '../layout/Spinner';
@@ -32,7 +32,7 @@ export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { da
                   <DashboardActions />
                   <div id="calenderDiv">
                     <Fragment>
-                      <DashboardTop dashboard={dashboard} />
+                      <Calendar dashboard={dashboard} />
                     </Fragment>
                   </div>
                   {/* THE SPLIT BETWEEN CALENDER AND JOURNAL */}
@@ -41,18 +41,9 @@ export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { da
                   <br/>
                   {/* END SPLIT */}
                   <div id="journalDiv">
-                    {dashboard.journal.length > 0 ? (
-                      <Fragment>
-                        <DashboardBottom dashboard={dashboard} />
-                      </Fragment>
-                      ) : (
-                        <div>
-                          <Fragment>
-                            <DashboardBottom dashboard={dashboard} />
-                          </Fragment>
-                          <h4>No Journal entries</h4>
-                        </div>
-                      )}
+                    <Fragment>
+                      <AddJournal />
+                    </Fragment>
                   </div>
                 </Fragment>
               ) : (

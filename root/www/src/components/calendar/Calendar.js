@@ -7,7 +7,7 @@ import CalendarUI from './CalendarUI';
 // import AddCalendar from '../dashboard-forms/addCalendar'
 import { deleteCalendar } from '../../actions/dashboard';
 
-export const Calendar = ({ dashboard, deleteCalendar }) => {
+const Calendar = ({ dashboard, deleteCalendar }) => {
     // This is the calendar entry form that should eitehr pop up or you can input
     const calendarEntries = dashboard.calendar.map(cal => (
       <tr key={cal._id}>

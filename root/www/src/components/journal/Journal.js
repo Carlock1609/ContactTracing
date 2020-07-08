@@ -9,7 +9,7 @@ import { getCurrentDashboard } from '../../actions/dashboard';
 import JournalEntries from './JournalEntries';
 
 
-export const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => {
+const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
       getCurrentDashboard();
     }, [getCurrentDashboard]);

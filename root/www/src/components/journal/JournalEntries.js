@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { deleteJournal } from '../../actions/dashboard';
 // import AddJournal from '../dashboard-forms/addJournal';
       
-export const JournalEntries = ({ dashboard, deleteJournal}) => {
-    console.log(dashboard)
+const JournalEntries = ({ dashboard, deleteJournal}) => {
     
+  // When getting the journal page it works. When you reffresh it crashes. Is this a state issue that its not saving?
     const journalForm = dashboard.journal.map(jour => {
       // this crashes if empty/null
       if(dashboard !== null && dashboard.journal.length > 0) {
@@ -37,7 +37,7 @@ export const JournalEntries = ({ dashboard, deleteJournal}) => {
  
 JournalEntries.propTypes = {
   dashboard: PropTypes.object.isRequired,
-  deleteJournal: PropTypes.func.isRequired
+  // deleteJournal: PropTypes.func.isRequired
 };
 
 export default connect(

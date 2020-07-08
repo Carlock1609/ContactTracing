@@ -9,7 +9,7 @@ import Calendar from '../calendar/Calendar';
 import { getCurrentDashboard } from '../../actions/dashboard';
 import Spinner from '../layout/Spinner';
 
-export const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
+const Dashboard = ({ getCurrentDashboard, auth: { user }, dashboard: { dashboard, loading } }) => {
     useEffect(() => {
         getCurrentDashboard();
     }, [getCurrentDashboard]);

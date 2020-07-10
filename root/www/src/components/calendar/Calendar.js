@@ -21,7 +21,6 @@ const Calendar = ({ dashboard, deleteCalendar }) => {
 
     return (
       <Fragment>
-        <h2>Calendar</h2>
         {/* <AddCalendar /> */}
         <table>
           <thead>

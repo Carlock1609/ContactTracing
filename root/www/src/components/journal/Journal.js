@@ -16,7 +16,10 @@ const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => 
 
     return (
       <Fragment>
-        <JournalEntries dashboard={dashboard} />
+        <h3 className="mt-5">JOURNAL ENTRIES</h3>
+        <div className="container">
+          <JournalEntries dashboard={dashboard} />
+        </div>
       </Fragment>
     ); 
 };

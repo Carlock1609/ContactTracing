@@ -33,6 +33,9 @@ const AddJournal = ({ addJournal, history}) => {
     return (
         <Fragment>
             <div className="container">
+                <div className="text-center">
+                    <h4>Create a Journal Entry</h4>
+                </div>
                 <form
                     onSubmit={e => {
                     e.preventDefault();

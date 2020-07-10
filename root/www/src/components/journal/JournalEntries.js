@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 // I want the user to be able to pick any time rather than set time.
 // import Moment from 'react-moment';
@@ -14,15 +14,53 @@ const JournalEntries = ({ dashboard, deleteJournal}) => {
       if(dashboard !== null && dashboard.journal.length > 0) {
         return (
           <div key={jour._id}>
-            <div>{jour.date}</div>
-            <div>{jour.time}</div> 
-            <div>{jour.activity}</div>
-            <div>{jour.location}</div>
-            <div>{jour.choice1}</div>
-            <div>{jour.choice2}</div>
-            <div>{jour.contact}</div>
-            <div>{jour.notes}</div>
-            <div><button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button></div>
+              <div id="journal_form">
+                  <h5 id="form_holder">Date/Time: </h5>
+                  <div className="row">
+                      <div className="col-md-6 col-sm-12 mb-1">
+                        <div>{jour.date}</div>
+                      </div>
+                      <div className="col-md-6 col-sm-12 mb-1">
+                        <div>{jour.time}</div>
+                      </div>
+                  </div>
+                  <h5 id="form_holder">Activity/Location: </h5>
+                  <div className="row">
+                      <div className="col-lg-6 col-md-6 mb-1">
+                        <div>{jour.activity}</div>
+                      </div>
+                      <div className="col-lg-6 col-md-6 mb-1">
+                        <div>{jour.location}</div>
+                      </div>
+                  </div>
+                      <h5 id="form_holder">Did you wear a mask: </h5>
+                  <div className="row">
+                      <div className="col-12 mb-1">
+                        <div>{jour.choice1}</div>
+                      </div>
+                  </div>
+                  <h5 id="form_holder">Did others wear a mask: </h5>
+                  <div className="row">
+                      <div className="col-12 mb-1">
+                        <div>{jour.choice2}</div>
+                      </div>
+                  </div>
+                  <h5 id="form_holder">Contact with COVID: </h5>
+                  <div className="row">
+                      <div className="col-12">
+                        <div>{jour.contact}</div>
+                      </div>
+                  </div>
+                  <h5 id="form_holder">Other notes: </h5>
+                  <div className="row mb-1">
+                      <div className="col-12">
+                        <div>{jour.notes}</div>
+                      </div>
+                  </div>
+                  <div className="text-center">
+                    <button onClick={() => deleteJournal(jour._id)} className="btn btn-dark">Delete</button> 
+                  </div>
+              </div>
           </div>
         );
       } else {
@@ -31,7 +69,7 @@ const JournalEntries = ({ dashboard, deleteJournal}) => {
       });
 
     return (
-      <div>{journalForm}</div>
+        <div>{journalForm}</div>
     );
 };
  

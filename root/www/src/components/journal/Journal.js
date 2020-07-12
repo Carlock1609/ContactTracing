@@ -13,6 +13,7 @@ const Journal = ({ getCurrentDashboard, dashboard: { dashboard, loading } }) => 
     useEffect(() => {
       getCurrentDashboard();
     }, [getCurrentDashboard]);
+    
 
     return (
       <Fragment>

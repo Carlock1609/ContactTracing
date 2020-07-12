@@ -33,7 +33,7 @@ const Login = ({ login, isAuthenticated }) => {
 
     return (
         <Fragment>
-            <section className="container-fluid text-center">
+            <section className="container text-center">
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Login</h5>
@@ -64,6 +64,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <p className="my-1">
                         Don't have an account? <Link to="/register">Sign Up</Link>
                     </p>
+                    <hr className="mt-4"/>
                 </div>
             </section>
         </Fragment>

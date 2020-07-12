@@ -42,7 +42,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
     return (
         <Fragment>
-            <section className="container-fluid text-center">
+            <section className="container text-center">
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Sign Up</h5>
@@ -94,6 +94,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                         Already have an account? <Link to="/login">Sign In</Link>
                     </p>
                 </div>
+                <hr className="mt-4"/>
             </section>
         </Fragment>
     )
